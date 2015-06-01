@@ -1,0 +1,32 @@
+# fix Clover mangling of DSDT info... for dsdt.dsl
+
+# Override DSDT oemId (for Clover, since it patches with "Apple ")
+into method label _DSM parent_label PS2K remove_entry;
+into device label PS2K insert
+begin
+Method (_DSM, 4, NotSerialized)\n
+{\n
+    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
+    Return (Package()\n
+    {\n
+        "RM,oem-id", "LENOVO",\n
+        "RM,oem-table-id", "Y50",\n
+    })\n
+}\n
+end;
+
+# Make EC-based brightness up/down work with RehabMan VoodooPS2 ACPI keyboard mechanism
+
+into method label _Q11 replace_content
+begin
+// Brightness Down\n
+    Notify(\_SB.PCI0.LPCB.PS2K, 0x0205)\n
+    Notify(\_SB.PCI0.LPCB.PS2K, 0x0285)\n
+end;
+into method label _Q12 replace_content
+begin
+// Brightness Up\n
+    Notify(\_SB.PCI0.LPCB.PS2K, 0x0206)\n
+    Notify(\_SB.PCI0.LPCB.PS2K, 0x0286)\n
+end;
+

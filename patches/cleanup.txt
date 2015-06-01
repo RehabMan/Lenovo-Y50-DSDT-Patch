@@ -1,0 +1,2 @@
+# remove all OEM _DSM (must be one of first patches)
+into_all method label _DSM remove_entry;

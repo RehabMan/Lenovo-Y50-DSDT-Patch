@@ -1,0 +1,3 @@
+# to remove WMI2 device -- so far, no use for it...
+
+# not implemented

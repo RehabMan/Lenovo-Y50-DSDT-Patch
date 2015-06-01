@@ -1,0 +1,57 @@
+
+into method label _INI parent_label RP01 code_regex ([\s\S]*) replace_matched
+begin
+\\rmdt.p1("RP01._INI enter")\n
+%1\n
+\\rmdt.p1("RP01._INI exit")\n
+end;
+
+into method label _INI parent_label RP02 code_regex ([\s\S]*) replace_matched
+begin
+\\rmdt.p1("RP02._INI enter")\n
+%1\n
+\\rmdt.p1("RP02._INI exit")\n
+end;
+
+into method label _INI parent_label RP03 code_regex ([\s\S]*) replace_matched
+begin
+\\rmdt.p1("RP03._INI enter")\n
+%1\n
+\\rmdt.p1("RP03._INI exit")\n
+end;
+
+into method label _INI parent_label RP04 code_regex ([\s\S]*) replace_matched
+begin
+\\rmdt.p1("RP04._INI enter")\n
+%1\n
+\\rmdt.p1("RP04._INI exit")\n
+end;
+
+into method label _INI parent_label RP05 code_regex ([\s\S]*) replace_matched
+begin
+\\rmdt.p1("RP05._INI enter")\n
+%1\n
+\\rmdt.p1("RP05._INI exit")\n
+end;
+
+into method label _INI parent_label RP06 code_regex ([\s\S]*) replace_matched
+begin
+\\rmdt.p1("RP06._INI enter")\n
+%1\n
+\\rmdt.p1("RP06._INI exit")\n
+end;
+
+into method label _INI parent_label RP07 code_regex ([\s\S]*) replace_matched
+begin
+\\rmdt.p1("RP07._INI enter")\n
+%1\n
+\\rmdt.p1("RP07._INI exit")\n
+end;
+
+into method label _INI parent_label RP08 code_regex ([\s\S]*) replace_matched
+begin
+\\rmdt.p1("RP08._INI enter")\n
+%1\n
+\\rmdt.p1("RP08._INI exit")\n
+end;
+

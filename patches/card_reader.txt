@@ -1,0 +1,26 @@
+
+# Attempt at making AppleSDXC.kext attach to Realtek card reader.
+
+# Note: Does not work.  AppleSDXC.kext is not compatible with this
+#  Realtek hardware.
+
+into device label PXSX parent_label RP04 set_label begin SDXC end;
+into_all method parent_label RP04 code_regex PXSX replaceall_matched begin SDXC end;
+
+into method label _DSM parent_label SDXC remove_entry;
+into device label SDXC insert
+begin
+Method (_DSM, 4, NotSerialized)\n
+{\n
+    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
+    Return (Package()\n
+    {\n
+        "compatible", Buffer() { "pci14e4,16bc" },\n
+        "name", Buffer() { "pci14e4,16bc" },\n
+        "IOName", "pci14e4,16bc",\n
+    })\n
+}\n
+end;
+
+into device label SDXC insert begin Name(_RMV, 0) end;
+

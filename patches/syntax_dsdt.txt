@@ -1,0 +1,4 @@
+# syntax fixes for dsdt.dsl
+
+into method label MHCF code_regex And\s\(Local0,\s0x60\) replace_matched begin /* And (Local0, 0x60) */ end;
+

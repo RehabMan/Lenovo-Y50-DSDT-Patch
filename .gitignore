@@ -1,0 +1,17 @@
+.DS_Store
+stash/*
+downloads/*
+patched/ssdt*.dsl
+patched/dsdt.dsl
+unpatched/ssdt*.dsl
+unpatched/dsdt.dsl
+patched/dsdt.dsl
+build/*
+Resources_ALC283/layout/*.zlib
+Patches.xcodeproj/project.xcworkspace/xcuserdata
+Patches.xcodeproj/project.xcworkspace/xcshareddata/Patches.xccheckout
+Patches.xcodeproj/xcuserdata
+native_linux/*
+!native_linux/readme.txt
+native_patchmatic/*
+!native_patchmatic/readme.txt
