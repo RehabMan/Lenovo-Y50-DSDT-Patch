@@ -9,8 +9,8 @@
 			<string>SSDT.aml</string>
 			<string>SSDT-1.aml</string>
 			<string>SSDT-2.aml</string>
-			<string>SSDT-7.aml</string>
-			<string>SSDT-8.aml</string>
+			<string>SSDT-3.aml</string>
+			<string>SSDT-4.aml</string>
 			<string>SSDT-9.aml</string>
 		</array>
 		<key>DropTables</key>
@@ -279,7 +279,7 @@
 	<key>SMBIOS</key>
 	<dict>
 		<key>ProductName</key>
-		<string>MacBookAir6,2</string>
+		<string>MacBookPro11,1</string>
 		<key>Trust</key>
 		<false/>
 	</dict>
