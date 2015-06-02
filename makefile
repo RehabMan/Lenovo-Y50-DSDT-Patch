@@ -207,6 +207,7 @@ endif
 ifneq "$(PEGP)" ""
 $(PATCHED)/$(PEGP).dsl: $(UNPATCHED)/$(PEGP).dsl $(LAPTOPGIT)/graphics/graphics_INI-disable.txt $(LAPTOPGIT)/graphics/graphics_Rename-GFX0.txt
 	cp $(UNPATCHED)/$(PEGP).dsl $(PATCHED)
+	patchmatic $@ $(LAPTOPGIT)/graphics/graphics_SSDT-disable-cleanup.txt
 	patchmatic $@ $(LAPTOPGIT)/graphics/graphics_INI-disable.txt
 	patchmatic $@ $(LAPTOPGIT)/graphics/graphics_Rename-GFX0.txt
 ifeq "$(DEBUG)" "1"
