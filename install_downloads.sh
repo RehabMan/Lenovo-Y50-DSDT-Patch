@@ -106,7 +106,7 @@ if [ $? -ne 0 ]; then
     echo Installing kexts...
     cd ./downloads/kexts
     for kext in *.zip; do
-        install $kext "FakePCIID_BCM57XX"
+        install $kext "FakePCIID_BCM57XX|FakePCIID_AR9280"
     done
     cd ../..
 fi
