@@ -241,13 +241,13 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>HDMI-audio, port 0204, 0x0a260005 0x0a260006</string>
-				<key>Find</key>
-				<data>AgQJAAAEAACHAAAA</data>
+				<string>HDMI-audio, port 0204, 0x0a2e0008, 0x0a16000c, 0x0a2e000d, 0x0a26000d</string>
 				<key>Name</key>
 				<string>AppleIntelFramebufferAzul</string>
+				<key>Find</key>
+				<data>AgQJAAAEAAAHAQAA</data>
 				<key>Replace</key>
-				<data>AgQJAAAIAACHAAAA</data>
+				<data>AgQJAAAIAAAHAQAA</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
