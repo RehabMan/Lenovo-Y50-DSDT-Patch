@@ -62,7 +62,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>kext-dev-mode=1 nv_disable=1 -gux_defer_usb2</string>
+		<string>kext-dev-mode=1 rootless=0 nv_disable=1</string>
 		<key>Legacy</key>
 		<string>PBR</string>
 		<key>Log</key>
@@ -151,7 +151,7 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>AppleHDA ALC283 (1 of 3)</string>
+				<string>AppleHDA ALC283 (1 of 4)</string>
 				<key>Find</key>
 				<data>PYQI7BA=</data>
 				<key>Name</key>
@@ -161,7 +161,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>AppleHDA ALC283 (2 of 3)</string>
+				<string>AppleHDA ALC283 (2 of 4)</string>
 				<key>Find</key>
 				<data>PYUI7BA=</data>
 				<key>Name</key>
@@ -171,13 +171,23 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>AppleHDA ALC283 (3 of 3)</string>
+				<string>AppleHDA ALC283 (3 of 4)</string>
 				<key>Find</key>
 				<data>PYQZ1BE=</data>
 				<key>Name</key>
 				<string>AppleHDA</string>
 				<key>Replace</key>
 				<data>PYMC7BA=</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>AppleHDA ALC283 (4 of 4)</string>
+				<key>Find</key>
+				<data>PYMZ1BE=</data>
+				<key>Name</key>
+				<string>AppleHDA</string>
+				<key>Replace</key>
+				<data>PQAAAAA=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -241,6 +251,16 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>10.11.dp BT4LE-Handoff-Hotspot, credit RehabMan based on Dokterdok patch</string>
+				<key>Find</key>
+				<data>SIX/dEdIiwc=</data>
+				<key>Name</key>
+				<string>IOBluetoothFamily</string>
+				<key>Replace</key>
+				<data>Qb4PAAAA60Q=</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>HDMI-audio, port 0105(12), 0x0a260005 0x0a260006, 0x0d220003, 0x0a2e000a, 0x0a26000a</string>
 				<key>Name</key>
 				<string>AppleIntelFramebufferAzul</string>
@@ -271,7 +291,7 @@
 	<key>SystemParameters</key>
 	<dict>
 		<key>InjectKexts</key>
-		<string>No</string>
+		<string>Detect</string>
 		<key>InjectSystemID</key>
 		<true/>
 	</dict>

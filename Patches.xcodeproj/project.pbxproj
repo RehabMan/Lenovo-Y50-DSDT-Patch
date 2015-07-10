@@ -54,6 +54,9 @@
 		84FCD8241A1B21E4006940E4 /* ssdt5.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ssdt5.dsl; sourceTree = "<group>"; };
 		ED3F518A1A2029DE0060691A /* install_downloads.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = install_downloads.sh; sourceTree = "<group>"; };
 		ED3F518B1A2029DE0060691A /* download.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = download.sh; sourceTree = "<group>"; };
+		ED4664C51B4F61BB00CC0F9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = USBXHC_y50.kext/Contents/Info.plist; sourceTree = "<group>"; };
+		ED4664C71B4F61D700CC0F9D /* Backlight.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Backlight.plist; sourceTree = "<group>"; };
+		ED4664C81B4F61D700CC0F9D /* patch_backlight.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = patch_backlight.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -68,6 +71,8 @@
 				8467C38E1A23A9FC00FCF396 /* mount_efi.sh */,
 				ED3F518B1A2029DE0060691A /* download.sh */,
 				ED3F518A1A2029DE0060691A /* install_downloads.sh */,
+				ED4664C61B4F61C200CC0F9D /* backlight */,
+				ED4664C41B4F618100CC0F9D /* USBXHC_y50.kext */,
 				84B540381ACB34B600D8ABAE /* audio */,
 				840152FC182AE4C600D58B0A /* patches */,
 				8444F2C118B9DDD500D59FF1 /* unpatched */,
@@ -148,6 +153,23 @@
 				845CCF5C19A2B0F000C6B5C0 /* ahhcd.plist */,
 			);
 			name = audio;
+			sourceTree = "<group>";
+		};
+		ED4664C41B4F618100CC0F9D /* USBXHC_y50.kext */ = {
+			isa = PBXGroup;
+			children = (
+				ED4664C51B4F61BB00CC0F9D /* Info.plist */,
+			);
+			name = USBXHC_y50.kext;
+			sourceTree = "<group>";
+		};
+		ED4664C61B4F61C200CC0F9D /* backlight */ = {
+			isa = PBXGroup;
+			children = (
+				ED4664C71B4F61D700CC0F9D /* Backlight.plist */,
+				ED4664C81B4F61D700CC0F9D /* patch_backlight.sh */,
+			);
+			name = backlight;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
