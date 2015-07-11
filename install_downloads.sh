@@ -128,6 +128,8 @@ install_kext AppleHDA_ALC283.kext
 
 if [[ "`sw_vers -productVersion`" == 10.11* ]]; then
     #install_kext USBXHC_y50.kext
+    # create custom AppleBacklightInjector.kext and install
+    ./patch_backlight.sh
     install_kext AppleBacklightInjector.kext
     # remove ACPIBacklight.kext if it is installed (doesn't work with 10.11)
     if [ -d /System/Library/Extensions/ACPIBacklight.kext ]; then
