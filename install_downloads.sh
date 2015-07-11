@@ -106,7 +106,7 @@ if [ $? -ne 0 ]; then
     echo Installing kexts...
     cd ./downloads/kexts
     for kext in *.zip; do
-        install $kext "FakePCIID_BCM57XX|FakePCIID_AR9280|BrcmPatchRAM|BrcmBluetoothInjector"
+        install $kext "FakePCIID_BCM57XX|FakePCIID_AR9280|FakePCIID_XHCIMux|BrcmPatchRAM|BrcmBluetoothInjector"
     done
     if [[ "`sw_vers -productVersion`" == 10.11* ]]; then
         # 10.11 needs only bluetooth injector
