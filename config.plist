@@ -93,7 +93,7 @@
 			<key>AddClockID</key>
 			<false/>
 			<key>FixOwnership</key>
-			<false/>
+			<true/>
 			<key>Inject</key>
 			<false/>
 		</dict>

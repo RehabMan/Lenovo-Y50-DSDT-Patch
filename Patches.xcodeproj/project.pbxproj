@@ -57,6 +57,7 @@
 		ED4664C51B4F61BB00CC0F9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = USBXHC_y50.kext/Contents/Info.plist; sourceTree = "<group>"; };
 		ED4664C71B4F61D700CC0F9D /* Backlight.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Backlight.plist; sourceTree = "<group>"; };
 		ED4664C81B4F61D700CC0F9D /* patch_backlight.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = patch_backlight.sh; sourceTree = "<group>"; };
+		ED77A23B1B52B9AD00AF5EEB /* config_UHD.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config_UHD.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -65,6 +66,7 @@
 			children = (
 				8406FCD6188627B8006D8DB7 /* README.md */,
 				8455352818E65265001ADBFD /* config.plist */,
+				ED77A23B1B52B9AD00AF5EEB /* config_UHD.plist */,
 				840152EF182AE45E00D58B0A /* makefile */,
 				840152F0182AE46D00D58B0A /* disassemble.sh */,
 				849F78781AEE6B0A006B721E /* refs.txt */,
