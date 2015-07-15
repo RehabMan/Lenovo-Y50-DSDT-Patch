@@ -116,9 +116,9 @@ if [ $? -ne 0 ]; then
     else
         # prior to 10.11, need uploader and ACPIBacklight.kext
         cd RehabMan-BrcmPatchRAM*/Release && install_kext BrcmPatchRAM.kext && cd ../..
-        cd RehabMan-Backlight*/Release && install_kext ACPIBacklight.kext && cd ../..
         # remove injector just in case
         $SUDO rm -Rf /System/Library/Extensions/BrcmBluetoothInjector.kext
+        #cd RehabMan-Backlight*/Release && install_kext ACPIBacklight.kext && cd ../..
     fi
     cd ../..
 fi
@@ -129,12 +129,12 @@ install_kext AppleHDA_ALC283.kext
 if [[ "`sw_vers -productVersion`" == 10.11* ]]; then
     #install_kext USBXHC_y50.kext
     # create custom AppleBacklightInjector.kext and install
-    ./patch_backlight.sh
-    install_kext AppleBacklightInjector.kext
+    #./patch_backlight.sh
+    #install_kext AppleBacklightInjector.kext
     # remove ACPIBacklight.kext if it is installed (doesn't work with 10.11)
-    if [ -d /System/Library/Extensions/ACPIBacklight.kext ]; then
-        $SUDO rm -Rf /System/Library/Extensions/ACPIBacklight.kext
-    fi
+    #if [ -d /System/Library/Extensions/ACPIBacklight.kext ]; then
+    #    $SUDO rm -Rf /System/Library/Extensions/ACPIBacklight.kext
+    #fi
 fi
 
 #check_directory *.kext
