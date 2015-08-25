@@ -200,7 +200,8 @@ $(PATCHED)/$(IGPU).dsl: $(UNPATCHED)/$(IGPU).dsl patches/cleanup.txt $(LAPTOPGIT
 	patchmatic $@ patches/cleanup.txt
 	patchmatic $@ $(LAPTOPGIT)/graphics/graphics_Rename-GFX0.txt
 	patchmatic $@ $(LAPTOPGIT)/graphics/graphics_PNLF_haswell.txt
-	patchmatic $@ $(LAPTOPGIT)/graphics/graphics_Rename-B0D3.txt
+	#patchmatic $@ $(LAPTOPGIT)/graphics/graphics_Rename-B0D3.txt
+	patchmatic $@ patches/hdmi_audio.txt
 	patchmatic $@ patches/graphics.txt
 ifeq "$(DEBUG)" "1"
 	patchmatic $@ $(DEBUGGIT)/debug_extern.txt
