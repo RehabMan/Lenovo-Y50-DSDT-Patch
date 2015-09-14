@@ -106,19 +106,22 @@ if [ $? -ne 0 ]; then
     echo Installing kexts...
     cd ./downloads/kexts
     for kext in *.zip; do
-        install $kext "FakePCIID_BCM57XX|FakePCIID_AR9280|BrcmPatchRAM|BrcmBluetoothInjector"
+        install $kext "Sensors|FakePCIID_BCM57XX|FakePCIID_AR9280|BrcmPatchRAM|BrcmBluetoothInjector"
     done
     if [[ "`sw_vers -productVersion`" == 10.11* ]]; then
-        # 10.11 needs only bluetooth injector
-        cd RehabMan-BrcmPatchRAM*/Release && install_kext BrcmBluetoothInjector.kext && cd ../..
-        # remove uploader just in case
+        # 10.11 needs BrcmPatchRAM2.kext
+        cd RehabMan-BrcmPatchRAM*/Release && install_kext BrcmPatchRAM2.kext && cd ../..
+        # remove BrcPatchRAM.kext just in case
         $SUDO rm -Rf /System/Library/Extensions/BrcmPatchRAM.kext
-    else
-        # prior to 10.11, need uploader and ACPIBacklight.kext
-        cd RehabMan-BrcmPatchRAM*/Release && install_kext BrcmPatchRAM.kext && cd ../..
         # remove injector just in case
         $SUDO rm -Rf /System/Library/Extensions/BrcmBluetoothInjector.kext
-        #cd RehabMan-Backlight*/Release && install_kext ACPIBacklight.kext && cd ../..
+    else
+        # prior to 10.11, need BrcmPatchRAM.kext
+        cd RehabMan-BrcmPatchRAM*/Release && install_kext BrcmPatchRAM.kext && cd ../..
+        # remove BrcPatchRAM2.kext just in case
+        $SUDO rm -Rf /System/Library/Extensions/BrcmPatchRAM2.kext
+        # remove injector just in case
+        $SUDO rm -Rf /System/Library/Extensions/BrcmBluetoothInjector.kext
     fi
     cd ../..
 fi
