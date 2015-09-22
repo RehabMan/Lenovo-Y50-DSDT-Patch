@@ -7,3 +7,18 @@
 
 into device label PNLF code_regex Name.*\(LMAX,.*\) replace_matched begin Name (LMAX, 0) end;
 
+#
+# Override some properties for IntelBacklight.kext
+# Override PWMMax to zero to use BIOS level (u430 happens to be 0x3a9)
+#
+into device label PNLF insert
+begin
+Method(RMCF)\n
+{\n
+    Return(Package()\n
+    {\n
+        "PWMMax", 0,\n
+    })
+}\n
+end;
+
