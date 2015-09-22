@@ -123,6 +123,8 @@ if [ $? -ne 0 ]; then
         # remove injector just in case
         $SUDO rm -Rf /System/Library/Extensions/BrcmBluetoothInjector.kext
     fi
+    # now using IntelBacklight.kext instead of ACPIBacklight.kext
+    $SUDO rm -Rf /System/Library/Extensions/ACPIBacklight.kext
     cd ../..
 fi
 
