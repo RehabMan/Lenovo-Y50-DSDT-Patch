@@ -62,7 +62,8 @@ function install
     if [ $? -ne 0 ]; then
         for kext in $out/Release/*.kext; do
             # install the kext when it exists regardless of filter
-            if [[ -e "$SLE/`basename $kext`" || "$2" == "" || "`echo $kext | grep -vE "$2"`" != "" ]]; then
+            kextname="`basename $kext`"
+            if [[ -e "$SLE/$kextname" || "$2" == "" || "`echo $kextname | grep -vE "$2"`" != "" ]]; then
                 install_kext $kext
             fi
         done
@@ -72,7 +73,8 @@ function install
     if [ $? -ne 0 ]; then
         for kext in $out/*.kext; do
             # install the kext when it exists regardless of filter
-            if [[ -e "$SLE/`basename $kext`" || "$2" == "" || "`echo $kext | grep -vE "$2"`" != "" ]]; then
+            kextname="`basename $kext`"
+            if [[ -e "$SLE/$kextname" || "$2" == "" || "`echo $kextname | grep -vE "$2"`" != "" ]]; then
                 install_kext $kext
             fi
         done
