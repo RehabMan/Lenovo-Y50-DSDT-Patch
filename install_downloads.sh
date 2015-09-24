@@ -4,6 +4,8 @@ SUDO=sudo
 #SUDO='echo #'
 #SUDO=nothing
 TAG=`pwd`/tools/tag
+SLE=/System/Library/Extensions
+EXCEPTIONS="Sensors|FakePCIID_BCM57XX|FakePCIID_AR9280|BrcmPatchRAM|BrcmBluetoothInjector|BrcmFirmwareStore"
 
 function check_directory
 {
@@ -24,10 +26,10 @@ function nothing
 function install_kext
 {
     if [ "$1" != "" ]; then
-        echo installing $1 to /System/Library/Extensions
-        $SUDO rm -Rf /System/Library/Extensions/`basename $1`
-        $SUDO cp -Rf $1 /System/Library/Extensions
-        $SUDO $TAG -a Gray /System/Library/Extensions/`basename $1`
+        echo installing $1 to $SLE
+        $SUDO rm -Rf $SLE/`basename $1`
+        $SUDO cp -Rf $1 $SLE
+        $SUDO $TAG -a Gray $SLE/`basename $1`
     fi
 }
 
@@ -59,7 +61,8 @@ function install
     check_directory $out/Release/*.kext
     if [ $? -ne 0 ]; then
         for kext in $out/Release/*.kext; do
-            if [[ "$2" == "" || "`echo $kext | grep -vE "$2"`" != "" ]]; then
+            # install the kext when it exists regardless of filter
+            if [[ -e "$SLE/`basename $kext`" || "$2" == "" || "`echo $kext | grep -vE "$2"`" != "" ]]; then
                 install_kext $kext
             fi
         done
@@ -68,7 +71,10 @@ function install
     check_directory $out/*.kext
     if [ $? -ne 0 ]; then
         for kext in $out/*.kext; do
-            install_kext $kext
+            # install the kext when it exists regardless of filter
+            if [[ -e "$SLE/`basename $kext`" || "$2" == "" || "`echo $kext | grep -vE "$2"`" != "" ]]; then
+                install_kext $kext
+            fi
         done
         installed=1
     fi
@@ -100,45 +106,48 @@ if [ "$(id -u)" != "0" ]; then
     echo "This script requires superuser access..."
 fi
 
+# extract minor version (eg. 10.9 vs. 10.10 vs. 10.11)
+MINOR_VER=$([[ "$(sw_vers -productVersion)" =~ [0-9]+\.([0-9]+)\. ]] && echo ${BASH_REMATCH[1]})
+
 # unzip/install kexts
 check_directory ./downloads/kexts/*.zip
 if [ $? -ne 0 ]; then
     echo Installing kexts...
     cd ./downloads/kexts
     for kext in *.zip; do
-        install $kext "Sensors|FakePCIID_BCM57XX|FakePCIID_AR9280|BrcmPatchRAM|BrcmBluetoothInjector"
+        install $kext "$EXCEPTIONS"
     done
-    if [[ "`sw_vers -productVersion`" == 10.11* ]]; then
+    if [[ $MINOR_VER -ge 11 ]]; then
         # 10.11 needs BrcmPatchRAM2.kext
         cd RehabMan-BrcmPatchRAM*/Release && install_kext BrcmPatchRAM2.kext && cd ../..
         # remove BrcPatchRAM.kext just in case
-        $SUDO rm -Rf /System/Library/Extensions/BrcmPatchRAM.kext
+        $SUDO rm -Rf $SLE/BrcmPatchRAM.kext
         # remove injector just in case
-        $SUDO rm -Rf /System/Library/Extensions/BrcmBluetoothInjector.kext
+        $SUDO rm -Rf $SLE/BrcmBluetoothInjector.kext
     else
         # prior to 10.11, need BrcmPatchRAM.kext
         cd RehabMan-BrcmPatchRAM*/Release && install_kext BrcmPatchRAM.kext && cd ../..
         # remove BrcPatchRAM2.kext just in case
-        $SUDO rm -Rf /System/Library/Extensions/BrcmPatchRAM2.kext
+        $SUDO rm -Rf $SLE/BrcmPatchRAM2.kext
         # remove injector just in case
-        $SUDO rm -Rf /System/Library/Extensions/BrcmBluetoothInjector.kext
+        $SUDO rm -Rf $SLE/BrcmBluetoothInjector.kext
     fi
     # now using IntelBacklight.kext instead of ACPIBacklight.kext
-    $SUDO rm -Rf /System/Library/Extensions/ACPIBacklight.kext
+    $SUDO rm -Rf $SLE/ACPIBacklight.kext
     cd ../..
 fi
 
 # install (injector) kexts in the repo itself
 install_kext AppleHDA_ALC283.kext
 
-#if [[ "`sw_vers -productVersion`" == 10.11* ]]; then
+#if [[ $MINOR_VER -ge 11 ]]; then
     #install_kext USBXHC_y50.kext
     # create custom AppleBacklightInjector.kext and install
     #./patch_backlight.sh
     #install_kext AppleBacklightInjector.kext
     # remove ACPIBacklight.kext if it is installed (doesn't work with 10.11)
-    #if [ -d /System/Library/Extensions/ACPIBacklight.kext ]; then
-    #    $SUDO rm -Rf /System/Library/Extensions/ACPIBacklight.kext
+    #if [ -d $SLE/ACPIBacklight.kext ]; then
+    #    $SUDO rm -Rf $SLE/ACPIBacklight.kext
     #fi
 #fi
 
@@ -150,7 +159,7 @@ install_kext AppleHDA_ALC283.kext
 #fi
 
 # force cache rebuild with output
-$SUDO touch /System/Library/Extensions && $SUDO kextcache -u /
+$SUDO touch $SLE && $SUDO kextcache -u /
 
 # unzip/install tools
 check_directory ./downloads/tools/*.zip
