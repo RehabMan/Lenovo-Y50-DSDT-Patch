@@ -109,7 +109,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 # extract minor version (eg. 10.9 vs. 10.10 vs. 10.11)
-MINOR_VER=$([[ "$(sw_vers -productVersion)" =~ [0-9]+\.([0-9]+)\. ]] && echo ${BASH_REMATCH[1]})
+MINOR_VER=$([[ "$(sw_vers -productVersion)" =~ [0-9]+\.([0-9]+) ]] && echo ${BASH_REMATCH[1]})
 
 # unzip/install kexts
 check_directory ./downloads/kexts/*.zip
