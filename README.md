@@ -4,7 +4,7 @@ This set of patches/makefile can be used to patch your Lenovo Y50 DSDT/SSDTs.  I
 
 Please refer to this guide thread on tonymacx86.com for a step-by-step process, feedback, and questions:
 
-TBW
+http://www.tonymacx86.com/yosemite-laptop-guides/165188-guide-lenovo-y50-y70-uhd-1080p-using-clover-uefi.html
 
 ### Change Log:
 

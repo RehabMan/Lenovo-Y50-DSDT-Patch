@@ -6,7 +6,8 @@
 # Created by RehabMan 
 #
 
-EFIDIR=$(shell sudo ./mount_efi.sh /)
+#EFIDIR=$(shell sudo ./mount_efi.sh /)
+EFIDIR=./efi
 LAPTOPGIT=../laptop.git
 DEBUGGIT=../debug.git
 BUILDDIR=./build
