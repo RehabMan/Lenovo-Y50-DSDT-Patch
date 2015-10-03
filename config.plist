@@ -191,23 +191,13 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Boot graphics glitch, 10.10.2 (1 of 2)</string>
+				<string>Boot graphics glitch, 10.10.x/10.11.x</string>
 				<key>Find</key>
-				<data>QYjE6xE=</data>
+				<data>AQAAdRc=</data>
 				<key>Name</key>
 				<string>IOGraphicsFamily</string>
 				<key>Replace</key>
-				<data>QYjE6zE=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Boot graphics glitch, 10.10.2 (2 of 2) (seems to have no effect)</string>
-				<key>Find</key>
-				<data>hcB0a0g=</data>
-				<key>Name</key>
-				<string>#IOGraphicsFamily</string>
-				<key>Replace</key>
-				<data>McB0W0g=</data>
+				<data>AQAAdBc=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
