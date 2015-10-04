@@ -134,6 +134,8 @@ if [ $? -ne 0 ]; then
         # remove injector just in case
         $SUDO rm -Rf $SLE/BrcmBluetoothInjector.kext
     fi
+    # this guide does not use BrcmFirmwareData.kext
+    $SUDO rm -Rf $SLE/BrcmFirmwareData.kext
     # now using IntelBacklight.kext instead of ACPIBacklight.kext
     $SUDO rm -Rf $SLE/ACPIBacklight.kext
     cd ../..
