@@ -69,14 +69,14 @@
 					<key>PR11</key>
 					<dict>
 						<key>UsbConnector</key>
-						<integer>255</integer>
+						<integer>0</integer>
 						<key>port</key>
 						<data>AQAAAA==</data>
 					</dict>
 					<key>PR12</key>
 					<dict>
 						<key>UsbConnector</key>
-						<integer>255</integer>
+						<integer>0</integer>
 						<key>port</key>
 						<data>AgAAAA==</data>
 					</dict>
@@ -97,7 +97,7 @@
 					<key>PR15</key>
 					<dict>
 						<key>UsbConnector</key>
-						<integer>255</integer>
+						<integer>0</integer>
 						<key>port</key>
 						<data>BQAAAA==</data>
 					</dict>
