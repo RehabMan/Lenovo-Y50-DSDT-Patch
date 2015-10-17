@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>14F17</string>
+	<string>15A178l</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
 	<string>AppleHDA</string>
 	<key>CFBundleGetInfoString</key>
-	<string>AppleHDA 9272.18.1, Copyright © 2000-2015 Apple Inc. All rights reserved.</string>
+	<string>AppleHDA 9272.50, Copyright © 2000-2015 Apple Inc. All rights reserved.</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.apple.driver.AppleHDA</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -19,25 +19,29 @@
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
 	<key>CFBundleShortVersionString</key>
-	<string>9272.18.1</string>
+	<string>9272.50</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
 	<key>CFBundleVersion</key>
-	<string>9272.18.1</string>
+	<string>9272.50</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>6D543f</string>
+	<string>7A176g</string>
 	<key>DTPlatformVersion</key>
 	<string>GM</string>
 	<key>DTSDKBuild</key>
-	<string>14E40</string>
+	<string>15A283</string>
 	<key>DTSDKName</key>
-	<string>macosx10.10internal</string>
+	<string>macosx10.11internal</string>
 	<key>DTXcode</key>
-	<string>0630</string>
+	<string>0700</string>
 	<key>DTXcodeBuild</key>
-	<string>6D543f</string>
+	<string>7A176g</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>HDA Driver</key>
@@ -499,6 +503,7 @@
 					<key>Layouts</key>
 					<array>
 						<integer>108</integer>
+						<integer>131</integer>
 					</array>
 					<key>widgets</key>
 					<array>
@@ -706,6 +711,7 @@
 						<integer>6</integer>
 						<integer>7</integer>
 						<integer>122</integer>
+						<integer>130</integer>
 					</array>
 					<key>widgets</key>
 					<array>
@@ -743,7 +749,7 @@
 		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
-	<string>AppleHDA 9272.18.1, Copyright © 2000-2015 Apple Inc. All rights reserved.</string>
+	<string>AppleHDA 9272.50, Copyright © 2000-2015 Apple Inc. All rights reserved.</string>
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>com.apple.driver.AppleHDAController</key>
