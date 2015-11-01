@@ -161,7 +161,7 @@ install_backlight:
 .PHONY: patch
 patch: $(ALL_PATCHED)
 
-$(PATCHED)/$(DSDT).dsl: $(UNPATCHED)/$(DSDT).dsl patches/syntax_dsdt.txt patches/cleanup.txt patches/remove_wmi.txt patches/iaoe.txt patches/keyboard.txt patches/audio.txt patches/sensors.txt $(LAPTOPGIT)/system/system_IRQ.txt $(LAPTOPGIT)/graphics/graphics_Rename-GFX0.txt $(LAPTOPGIT)/graphics/graphics_Rename-B0D3.txt $(LAPTOPGIT)/usb/usb_7-series.txt patches/usb.txt $(LAPTOPGIT)/system/system_WAK2.txt $(LAPTOPGIT)/system/system_OSYS_win7.txt $(LAPTOPGIT)/system/system_MCHC.txt $(LAPTOPGIT)/system/system_HPET.txt $(LAPTOPGIT)/system/system_RTC.txt $(LAPTOPGIT)/system/system_SMBUS.txt $(LAPTOPGIT)/system/system_Mutex.txt $(LAPTOPGIT)/misc/misc_Haswell-LPC.txt $(LAPTOPGIT)/system/system_PNOT.txt $(LAPTOPGIT)/system/system_IMEI.txt $(LAPTOPGIT)/battery/battery_Lenovo-Y50.txt patches/ar92xx_wifi.txt patches/bcm_wifi.txt patches/card_reader.txt
+$(PATCHED)/$(DSDT).dsl: $(UNPATCHED)/$(DSDT).dsl patches/syntax_dsdt.txt patches/cleanup.txt patches/remove_wmi.txt patches/iaoe.txt patches/keyboard.txt patches/audio.txt patches/sensors.txt $(LAPTOPGIT)/system/system_IRQ.txt $(LAPTOPGIT)/graphics/graphics_Rename-GFX0.txt $(LAPTOPGIT)/graphics/graphics_Rename-B0D3.txt $(LAPTOPGIT)/usb/usb_7-series.txt patches/usb.txt $(LAPTOPGIT)/system/system_WAK2.txt $(LAPTOPGIT)/system/system_OSYS_win8.txt $(LAPTOPGIT)/system/system_MCHC.txt $(LAPTOPGIT)/system/system_HPET.txt $(LAPTOPGIT)/system/system_RTC.txt $(LAPTOPGIT)/system/system_SMBUS.txt $(LAPTOPGIT)/system/system_Mutex.txt $(LAPTOPGIT)/misc/misc_Haswell-LPC.txt $(LAPTOPGIT)/system/system_PNOT.txt $(LAPTOPGIT)/system/system_IMEI.txt $(LAPTOPGIT)/battery/battery_Lenovo-Y50.txt patches/ar92xx_wifi.txt patches/bcm_wifi.txt patches/card_reader.txt
 	cp $(UNPATCHED)/$(DSDT).dsl $(PATCHED)
 	patchmatic $@ patches/syntax_dsdt.txt
 	patchmatic $@ patches/cleanup.txt
@@ -176,7 +176,7 @@ $(PATCHED)/$(DSDT).dsl: $(UNPATCHED)/$(DSDT).dsl patches/syntax_dsdt.txt patches
 	#patchmatic $@ $(LAPTOPGIT)/usb/usb_7-series.txt
 	patchmatic $@ patches/usb.txt
 	patchmatic $@ $(LAPTOPGIT)/system/system_WAK2.txt
-	patchmatic $@ $(LAPTOPGIT)/system/system_OSYS_win7.txt
+	patchmatic $@ $(LAPTOPGIT)/system/system_OSYS_win8.txt
 	#patchmatic $@ $(LAPTOPGIT)/system/system_MCHC.txt
 	#patchmatic $@ $(LAPTOPGIT)/system/system_HPET.txt
 	patchmatic $@ $(LAPTOPGIT)/system/system_RTC.txt

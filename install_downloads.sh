@@ -144,7 +144,7 @@ fi
 # install (injector) kexts in the repo itself
 install_kext AppleHDA_ALC283.kext
 
-#if [[ $MINOR_VER -ge 11 ]]; then
+if [[ $MINOR_VER -ge 11 ]]; then
     install_kext USBXHC_y50.kext
     # create custom AppleBacklightInjector.kext and install
     #./patch_backlight.sh
@@ -153,7 +153,7 @@ install_kext AppleHDA_ALC283.kext
     #if [ -d $SLE/ACPIBacklight.kext ]; then
     #    $SUDO rm -Rf $SLE/ACPIBacklight.kext
     #fi
-#fi
+fi
 
 #check_directory *.kext
 #if [ $? -ne 0 ]; then
