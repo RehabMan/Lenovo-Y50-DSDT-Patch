@@ -16,17 +16,34 @@ Method (_DSM, 4, NotSerialized)\n
 end;
 
 # Make EC-based brightness up/down work with RehabMan VoodooPS2 ACPI keyboard mechanism
+# or with ELAN driver, depending on trackpad that is installed
 
 into method label _Q11 replace_content
 begin
 // Brightness Down\n
-    Notify(\_SB.PCI0.LPCB.PS2K, 0x0205)\n
-    Notify(\_SB.PCI0.LPCB.PS2K, 0x0285)\n
+    If (LOr (LEqual (TPDF, 0x04), LEqual (TPDF, 0x06)))\n
+    {\n
+        Notify(\_SB.PCI0.LPCB.PS2K, 0x0405)\n
+    }\n
+    Else\n
+    {\n
+        // Other(ELAN)\n
+        Notify(\_SB.PCI0.LPCB.PS2K, 0x20)\n
+    }\n
 end;
+
 into method label _Q12 replace_content
 begin
 // Brightness Up\n
-    Notify(\_SB.PCI0.LPCB.PS2K, 0x0206)\n
-    Notify(\_SB.PCI0.LPCB.PS2K, 0x0286)\n
+    If (LOr (LEqual (TPDF, 0x04), LEqual (TPDF, 0x06)))\n
+    {\n
+        // Synaptics\n
+        Notify(\_SB.PCI0.LPCB.PS2K, 0x0406)\n
+    }\n
+    Else\n
+    {\n
+        // Other(ELAN)\n
+        Notify(\_SB.PCI0.LPCB.PS2K, 0x10)\n
+    }\n
 end;
 
