@@ -5,7 +5,18 @@ SUDO=sudo
 #SUDO=nothing
 TAG=`pwd`/tools/tag
 SLE=/System/Library/Extensions
-EXCEPTIONS="Sensors|FakePCIID_BCM57XX|FakePCIID_AR9280|BrcmPatchRAM|BrcmBluetoothInjector|BrcmFirmwareData"
+LE=/Library/Extensions
+EXCEPTIONS="Sensors|FakePCIID_BCM57XX||FakePCIID_AR9280|FakePCIID_Intel_GbX|FakePCIID_Intel_HDMI|BrcmPatchRAM|BrcmBluetoothInjector|BrcmFirmwareData"
+
+# extract minor version (eg. 10.9 vs. 10.10 vs. 10.11)
+MINOR_VER=$([[ "$(sw_vers -productVersion)" =~ [0-9]+\.([0-9]+) ]] && echo ${BASH_REMATCH[1]})
+
+# install to /Library/Extensions for 10.11 or greater
+if [[ $MINOR_VER -ge 11 ]]; then
+    KEXTDEST=$LE
+else
+    KEXTDEST=$SLE
+fi
 
 function check_directory
 {
@@ -26,10 +37,10 @@ function nothing
 function install_kext
 {
     if [ "$1" != "" ]; then
-        echo installing $1 to $SLE
-        $SUDO rm -Rf $SLE/`basename $1`
-        $SUDO cp -Rf $1 $SLE
-        $SUDO $TAG -a Gray $SLE/`basename $1`
+        echo installing $1 to $KEXTDEST
+        $SUDO rm -Rf $SLE/`basename $1` $KEXTDEST/`basename $1`
+        $SUDO cp -Rf $1 $KEXTDEST
+        $SUDO $TAG -a Gray $KEXTDEST/`basename $1`
     fi
 }
 
@@ -63,7 +74,7 @@ function install
         for kext in $out/Release/*.kext; do
             # install the kext when it exists regardless of filter
             kextname="`basename $kext`"
-            if [[ -e "$SLE/$kextname" || "$2" == "" || "`echo $kextname | grep -vE "$2"`" != "" ]]; then
+            if [[ -e "$SLE/$kextname" || -e "$KEXTDEST/$kextname" || "$2" == "" || "`echo $kextname | grep -vE "$2"`" != "" ]]; then
                 install_kext $kext
             fi
         done
@@ -74,7 +85,7 @@ function install
         for kext in $out/*.kext; do
             # install the kext when it exists regardless of filter
             kextname="`basename $kext`"
-            if [[ -e "$SLE/$kextname" || "$2" == "" || "`echo $kextname | grep -vE "$2"`" != "" ]]; then
+            if [[ -e "$SLE/$kextname" || -e "$KEXTDEST/$kextname" || "$2" == "" || "`echo $kextname | grep -vE "$2"`" != "" ]]; then
                 install_kext $kext
             fi
         done
@@ -108,9 +119,6 @@ if [ "$(id -u)" != "0" ]; then
     echo "This script requires superuser access..."
 fi
 
-# extract minor version (eg. 10.9 vs. 10.10 vs. 10.11)
-MINOR_VER=$([[ "$(sw_vers -productVersion)" =~ [0-9]+\.([0-9]+) ]] && echo ${BASH_REMATCH[1]})
-
 # unzip/install kexts
 check_directory ./downloads/kexts/*.zip
 if [ $? -ne 0 ]; then
@@ -123,21 +131,30 @@ if [ $? -ne 0 ]; then
         # 10.11 needs BrcmPatchRAM2.kext
         cd RehabMan-BrcmPatchRAM*/Release && install_kext BrcmPatchRAM2.kext && cd ../..
         # remove BrcPatchRAM.kext just in case
-        $SUDO rm -Rf $SLE/BrcmPatchRAM.kext
+        $SUDO rm -Rf $SLE/BrcmPatchRAM.kext $KEXTDEST/BrcmPatchRAM.kext
         # remove injector just in case
-        $SUDO rm -Rf $SLE/BrcmBluetoothInjector.kext
+        $SUDO rm -Rf $SLE/BrcmBluetoothInjector.kext $KEXTDEST/BrcmBluetoothInjector.kext
     else
         # prior to 10.11, need BrcmPatchRAM.kext
         cd RehabMan-BrcmPatchRAM*/Release && install_kext BrcmPatchRAM.kext && cd ../..
         # remove BrcPatchRAM2.kext just in case
-        $SUDO rm -Rf $SLE/BrcmPatchRAM2.kext
+        $SUDO rm -Rf $SLE/BrcmPatchRAM2.kext $KEXTDEST/BrcmPatchRAM2.kext
         # remove injector just in case
-        $SUDO rm -Rf $SLE/BrcmBluetoothInjector.kext
+        $SUDO rm -Rf $SLE/BrcmBluetoothInjector.kext $KEXTDEST/BrcmBluetoothInjector.kext
     fi
     # this guide does not use BrcmFirmwareData.kext
-    $SUDO rm -Rf $SLE/BrcmFirmwareData.kext
+    $SUDO rm -Rf $SLE/BrcmFirmwareData.kext $KEXTDEST/BrcmFirmwareData.kext
     # now using IntelBacklight.kext instead of ACPIBacklight.kext
-    $SUDO rm -Rf $SLE/ACPIBacklight.kext
+    $SUDO rm -Rf $SLE/ACPIBacklight.kext $KEXTDEST/ACPIBacklight.kext
+    # deal with some renames
+    if [[ -e $KEXTDEST/FakePCIID_Broadcom_WiFi.kext ]]; then
+        # remove old FakePCIID_BCM94352Z_as_BCM94360CS2.kext
+        $SUDO rm -Rf $SLE/FakePCIID_BCM94352Z_as_BCM94360CS2.kext $KEXTDEST/FakePCIID_BCM94352Z_as_BCM94360CS2.kext
+    fi
+    if [[ -e $KEXTDEST/FakePCIID_Intel_HD_Graphics.kext ]]; then
+        # remove old FakePCIID_HD4600_HD4400.kext
+        $SUDO rm -Rf $SLE/FakePCIID_HD4600_HD4400.kext $KEXTDEST/FakePCIID_HD4600_HD4400.kext
+    fi
     cd ../..
 fi
 
