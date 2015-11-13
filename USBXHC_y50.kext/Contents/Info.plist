@@ -35,10 +35,10 @@
 			<key>IOProviderMergeProperties</key>
 			<dict>
 				<key>port-count</key>
-				<data>AQAAAA==</data>
+				<data>CAAAAA==</data>
 				<key>ports</key>
 				<dict>
-					<key>PRT1</key>
+					<key>PR11</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>255</integer>
@@ -50,7 +50,7 @@
 			<key>model</key>
 			<string>MacBookPro11,1</string>
 		</dict>
-		<key>MacBookPro11,1-PR01-hub</key>
+		<key>MacBookPro11,1-PR11-hub</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>com.apple.driver.AppleUSBMergeNub</string>
@@ -66,56 +66,56 @@
 				<data>CAAAAA==</data>
 				<key>ports</key>
 				<dict>
-					<key>PR11</key>
+					<key>HP11</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>0</integer>
 						<key>port</key>
 						<data>AQAAAA==</data>
 					</dict>
-					<key>PR12</key>
+					<key>HP12</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>0</integer>
 						<key>port</key>
 						<data>AgAAAA==</data>
 					</dict>
-					<key>PR13</key>
+					<key>HP13</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>255</integer>
 						<key>port</key>
 						<data>AwAAAA==</data>
 					</dict>
-					<key>PR14</key>
+					<key>HP14</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>255</integer>
 						<key>port</key>
 						<data>BAAAAA==</data>
 					</dict>
-					<key>PR15</key>
+					<key>HP15</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>0</integer>
 						<key>port</key>
 						<data>BQAAAA==</data>
 					</dict>
-					<key>PR16</key>
+					<key>HP16</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>255</integer>
 						<key>port</key>
 						<data>BgAAAA==</data>
 					</dict>
-					<key>PR17</key>
+					<key>HP17</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>255</integer>
 						<key>port</key>
 						<data>BwAAAA==</data>
 					</dict>
-					<key>PR18</key>
+					<key>HP18</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>255</integer>
@@ -140,10 +140,10 @@
 			<key>IOProviderMergeProperties</key>
 			<dict>
 				<key>port-count</key>
-				<data>AQAAAA==</data>
+				<data>BgAAAA==</data>
 				<key>ports</key>
 				<dict>
-					<key>PRT1</key>
+					<key>PR21</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>255</integer>
@@ -168,7 +168,7 @@
 			<key>IOProviderMergeProperties</key>
 			<dict>
 				<key>port-count</key>
-				<data>EQAAAA==</data>
+				<data>FQAAAA==</data>
 				<key>ports</key>
 				<dict>
 					<key>HS01</key>
@@ -238,10 +238,10 @@
 			<key>IOProviderMergeProperties</key>
 			<dict>
 				<key>port-count</key>
-				<data>AQAAAA==</data>
+				<data>CAAAAA==</data>
 				<key>ports</key>
 				<dict>
-					<key>PRT1</key>
+					<key>PR11</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>255</integer>
@@ -253,7 +253,7 @@
 			<key>model</key>
 			<string>MacBookPro11,2</string>
 		</dict>
-		<key>MacBookPro11,2-PR01-hub</key>
+		<key>MacBookPro11,2-PR11-hub</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>com.apple.driver.AppleUSBMergeNub</string>
@@ -269,56 +269,56 @@
 				<data>CAAAAA==</data>
 				<key>ports</key>
 				<dict>
-					<key>PR11</key>
+					<key>HP11</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>0</integer>
 						<key>port</key>
 						<data>AQAAAA==</data>
 					</dict>
-					<key>PR12</key>
+					<key>HP12</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>0</integer>
 						<key>port</key>
 						<data>AgAAAA==</data>
 					</dict>
-					<key>PR13</key>
+					<key>HP13</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>255</integer>
 						<key>port</key>
 						<data>AwAAAA==</data>
 					</dict>
-					<key>PR14</key>
+					<key>HP14</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>255</integer>
 						<key>port</key>
 						<data>BAAAAA==</data>
 					</dict>
-					<key>PR15</key>
+					<key>HP15</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>0</integer>
 						<key>port</key>
 						<data>BQAAAA==</data>
 					</dict>
-					<key>PR16</key>
+					<key>HP16</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>255</integer>
 						<key>port</key>
 						<data>BgAAAA==</data>
 					</dict>
-					<key>PR17</key>
+					<key>HP17</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>255</integer>
 						<key>port</key>
 						<data>BwAAAA==</data>
 					</dict>
-					<key>PR18</key>
+					<key>HP18</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>255</integer>
@@ -343,10 +343,10 @@
 			<key>IOProviderMergeProperties</key>
 			<dict>
 				<key>port-count</key>
-				<data>AQAAAA==</data>
+				<data>BgAAAA==</data>
 				<key>ports</key>
 				<dict>
-					<key>PRT1</key>
+					<key>PR21</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>255</integer>
@@ -371,7 +371,7 @@
 			<key>IOProviderMergeProperties</key>
 			<dict>
 				<key>port-count</key>
-				<data>EQAAAA==</data>
+				<data>FQAAAA==</data>
 				<key>ports</key>
 				<dict>
 					<key>HS01</key>
