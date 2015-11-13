@@ -199,10 +199,10 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
         Method(_INI)
         {
             // disable discrete graphics (Nvidia) if it is present
-            External(\_SB.PCI0.RP05.PEGP._OFF, MethodObj)
-            If (CondRefOf(\_SB.PCI0.RP05.PEGP._OFF))
+            External(\_SB.PCI0.PEG0.PEGP._OFF, MethodObj)
+            If (CondRefOf(\_SB.PCI0.PEG0.PEGP._OFF))
             {
-                \_SB.PCI0.RP05.PEGP._OFF()
+                \_SB.PCI0.PEG0.PEGP._OFF()
             }
         }
     }
