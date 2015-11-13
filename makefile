@@ -7,8 +7,6 @@
 #
 
 BUILDDIR=./build
-PATCHED=./patched
-UNPATCHED=./unpatched
 RESOURCES=./Resources_ALC283
 HDAINJECT=AppleHDA_ALC283.kext
 HDALAYOUT=layout3
@@ -37,7 +35,6 @@ $(BUILDDIR)/SSDT-HACK.aml: ./SSDT-HACK.dsl
 
 .PHONY: clean
 clean:
-	rm -f $(PATCHED)/*.dsl
 	rm -f $(BUILDDIR)/*.dsl $(BUILDDIR)/*.aml
 
 # Clover Install
