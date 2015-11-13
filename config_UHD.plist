@@ -569,6 +569,16 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>0x0a260006 9MB cursor bytes, vbo</string>
+				<key>Find</key>
+				<data>BgAmCgEDAwMAAAACAAAwAQAAYAA=</data>
+				<key>Name</key>
+				<string>disabled:AppleIntelFramebufferAzul</string>
+				<key>Replace</key>
+				<data>BgAmCgEDAwMAAAACAAAwAQAAkAA=</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>Enable 128MB DVMT-prealloc, 0x0a2e0008</string>
 				<key>Find</key>
 				<data>CAAuCgEDAwMAAAAE</data>
