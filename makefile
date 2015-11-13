@@ -46,6 +46,7 @@ install: $(PRODUCTS)
 	$(eval EFIDIR:=$(shell sudo ./mount_efi.sh /))
 	rm -f $(EFIDIR)/EFI/CLOVER/ACPI/patched/SSDT-HACK.aml
 	rm -f $(EFIDIR)/EFI/CLOVER/ACPI/patched/DSDT.aml
+	rm -f $(EFIDIR)/EFI/CLOVER/ACPI/patched/SSDT-1.aml
 	rm -f $(EFIDIR)/EFI/CLOVER/ACPI/patched/SSDT-2.aml
 	rm -f $(EFIDIR)/EFI/CLOVER/ACPI/patched/SSDT-3.aml
 	rm -f $(EFIDIR)/EFI/CLOVER/ACPI/patched/SSDT-4.aml
