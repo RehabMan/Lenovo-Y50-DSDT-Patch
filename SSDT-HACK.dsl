@@ -430,7 +430,7 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
             }
             Else
             {
-                // Other(ELAN)\n
+                // Other(ELAN)
                 Notify(\_SB.PCI0.LPCB.PS2K, 0x10)
             }
         }
