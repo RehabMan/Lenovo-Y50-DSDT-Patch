@@ -36,9 +36,9 @@
 				8467C38E1A23A9FC00FCF396 /* mount_efi.sh */,
 				ED3F518B1A2029DE0060691A /* download.sh */,
 				ED3F518A1A2029DE0060691A /* install_downloads.sh */,
-				ED4664C61B4F61C200CC0F9D /* backlight */,
 				ED4664C41B4F618100CC0F9D /* USBXHC_y50.kext */,
 				84B540381ACB34B600D8ABAE /* audio */,
+				ED4664C61B4F61C200CC0F9D /* backlight */,
 			);
 			sourceTree = "<group>";
 		};
