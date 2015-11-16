@@ -132,14 +132,24 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
 
 
 //
-// Disabling EHCI #1
+// Disabling EHCI #1 (and EHCI #2)
 //
 
     External(_SB.PCI0.EH01, DeviceObj)
+    External(_SB.PCI0.EH02, DeviceObj)
     Scope(_SB.PCI0)
     {
         // registers needed for disabling EHC#1
         Scope(EH01)
+        {
+            OperationRegion(PSTS, PCI_Config, 0x54, 2)
+            Field(PSTS, WordAcc, NoLock, Preserve)
+            {
+                PSTE, 2  // bits 2:0 are power state
+            }
+        }
+        // registers needed for disabling EHC#1
+        Scope(EH02)
         {
             OperationRegion(PSTS, PCI_Config, 0x54, 2)
             Field(PSTS, WordAcc, NoLock, Preserve)
@@ -158,7 +168,9 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
             OperationRegion(FDM1, SystemMemory, Add(And(RCB1,Not(Subtract(ShiftLeft(1,14),1))),0x3418), 4)
             Field(FDM1, DWordAcc, NoLock, Preserve)
             {
-                ,15,    // skip first 15 bits
+                ,13,    // skip first 13 bits
+                FDE2,1, // should be bit 13 (0-based) (FD EHCI#2)
+                ,1,
                 FDE1,1, // should be bit 15 (0-based) (FD EHCI#1)
             }
         }
@@ -173,6 +185,12 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
                 Store(3, ^^EH01.PSTE)
                 // disable EHCI#1 PCI space
                 Store(1, ^^LPCB.FDE1)
+
+                // disable EHCI#2
+                // put EHCI#2 in D3hot (sleep mode)
+                Store(3, ^^EH02.PSTE)
+                // disable EHCI#2 PCI space
+                Store(1, ^^LPCB.FDE2)
             }
         }
     }
