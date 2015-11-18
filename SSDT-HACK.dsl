@@ -268,7 +268,6 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
             })
         }
 
-        // overrides for VoodooPS2 configuration...
         Name(RMCF, Package()
         {
             "Controller", Package()
@@ -289,12 +288,116 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
                 "MultiFingerHorizontalDivisor", 9,
                 "MomentumScrollThreshY", 12,
             },
+            "Keyboard", Package()
+            {
+                "Breakless PS2", Package()
+                {
+                    Package(){}, //indicating array
+                    "e06a", //F3
+                    "e06b", //F9
+                    "e06c", //F10
+                    "e06d", //F11
+                },
+                "MaximumMacroTime", 25000000,
+                "Macro Inversion", Package()
+                {
+                    Package(){},
+                    //F3
+                    Buffer() { 0xff, 0xff, 0x02, 0x6a, 0x00, 0x00, 0x00, 0x00, 0x02, 0x5b, 0x01, 0x19 }, //e06a
+                    Buffer() { 0xff, 0xff, 0x02, 0xea, 0x00, 0x00, 0x00, 0x00, 0x01, 0x99, 0x02, 0xdb }, //e0ea
+
+                    //F9
+                    Buffer() { 0xff, 0xff, 0x02, 0x6b, 0x00, 0x00, 0x00, 0x00, 0x02, 0x5b, 0x01, 0x17 }, //e06b
+                    Buffer() { 0xff, 0xff, 0x02, 0xeb, 0x00, 0x00, 0x00, 0x00, 0x01, 0x97, 0x02, 0xdb }, //e0eb
+
+                    //F10
+                    Buffer() { 0xff, 0xff, 0x02, 0x6c, 0x00, 0x00, 0x00, 0x00, 0x02, 0x5b, 0x01, 0x21 }, //e06c
+                    Buffer() { 0xff, 0xff, 0x02, 0xec, 0x00, 0x00, 0x00, 0x00, 0x01, 0xa1, 0x02, 0xdb }, //e0ec
+
+                    //F11
+                    Buffer() { 0xff, 0xff, 0x02, 0x6d, 0x00, 0x00, 0x00, 0x00, 0x01, 0x38, 0x01, 0x1d, 0x01, 0x0f }, //e06d
+                    Buffer() { 0xff, 0xff, 0x02, 0xed, 0x00, 0x00, 0x00, 0x00, 0x01, 0xb8, 0x01, 0x9d, 0x01, 0x8f }, //e0ed
+                },
+                "Custom ADB Map", Package()
+                {
+                    Package(){},
+                    "e06a=6a", //FnF3 = F16
+                    "e06b=40", //FnF9 = F17
+                    "e06c=4f", //FnF10 = F18
+                    "e06d=50", //FnF11 = F19
+                },
+                "Custom PS2 Map", Package()
+                {
+                    Package(){},
+                    "e037=64", // PrtSc=F13
+                },
+                "Function Keys Special", Package()
+                {
+                    Package(){},
+                    // The following 12 items map Fn+fkeys to Fn+fkeys, Y50 and u430 differ
+                    "e05f=e05f",   //F1
+                    //F2 missing
+                    "e06a=e06a",   //F3
+                    //F4 no Fn
+                    //F5 missing
+                    "e073=e037",   //F6
+                    //F7 no Fn
+                    //F8 no Fn
+                    "e06b=e06b",   //F9
+                    "e06c=e06c",   //F10
+                    "e06d=e06d",   //F11
+                    //F12 no Fn
+                    // The following 12 items map fkeys to fkeys, Y50 and u430 are the same
+                    "3b=3b",
+                    "3c=3c",
+                    "3d=3d",
+                    "3e=3e",
+                    "3f=3f",
+                    "40=40",
+                    "41=41",
+                    "42=42",
+                    "43=43",
+                    "44=44",
+                    "57=57",
+                    "58=58",
+                },
+                "Function Keys Standard", Package()
+                {
+                    Package(){},
+                    // The following 12 items map Fn+fkeys to fkeys
+                    "e05f=3b",   //F1
+                    //F2 missing
+                    "e06a=3d",   //F3
+                    //F4 no Fn
+                    //F5 missing
+                    "e073=40",   //F6
+                    //F7 no Fn
+                    //F8 no Fn
+                    "e06b=43",   //F9, F10 complex
+                    "e06c=44",   //F10 macro
+                    "e06d=57",   //F11 macro
+                    //F12 no Fn
+                    // The following 12 items map fkeys to Fn+fkeys
+                    "3b=e05f",   //F1
+                    //F2 missing
+                    "3d=e06a",   //F3
+                    //F4 no Fn
+                    //F5 missing
+                    "40=e037",   //F6
+                    //F7 no Fn
+                    //F8 no Fn
+                    "43=e06b",   //F9, F10 complex
+                    "44=e06c",   //F10 macro
+                    "57=e06d",   //F11 macro
+                    //F12 no Fn
+                },
+            },
         })
     }
 
     External(_SB.PCI0.LPCB.EC0, DeviceObj)
     External(TPDF, FieldUnitObj)
-    
+
     Scope(_SB.PCI0.LPCB.EC0)
     {
         // The native _Qxx methods in DSDT are renamed XQxx,
