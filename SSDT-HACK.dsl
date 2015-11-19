@@ -600,8 +600,7 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
                             Store (DerefOf (Index (Arg2, One)), SMAD)
                             Store (DerefOf (Index (Arg2, 0x02)), SMCM)
                             Store (DerefOf (Index (Arg2, Zero)), SMPR)
-                            While (LAnd (Not (LEqual (ESRC, Zero)), Not (LEqual (And (SMST, 0x80
-                                ), 0x80))))
+                            While (LAnd (Not (LEqual (ESRC, Zero)), Not (LEqual (And (SMST, 0x80), 0x80))))
                             {
                                 Sleep (0x14)
                                 Subtract (ESRC, One, ESRC)
