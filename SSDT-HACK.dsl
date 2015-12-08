@@ -100,6 +100,11 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
                         "UsbConnector", 3,
                         "port", Buffer() { 0x02, 0, 0, 0 },
                     },
+                    "HS05", Package()   // touch screen
+                    {
+                        "UsbConnector", 255,
+                        "port", Buffer() { 0x05, 0, 0, 0 },
+                    },
                     "HS06", Package()
                     {
                         "UsbConnector", 255,
