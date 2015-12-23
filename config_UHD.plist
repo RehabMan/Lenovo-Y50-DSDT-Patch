@@ -570,16 +570,20 @@
 			<dict>
 				<key>Comment</key>
 				<string>0x0a260006 9MB cursor bytes, vbo</string>
+				<key>Disabled</key>
+				<true/>
 				<key>Find</key>
 				<data>BgAmCgEDAwMAAAACAAAwAQAAYAA=</data>
 				<key>Name</key>
-				<string>disabled:AppleIntelFramebufferAzul</string>
+				<string>AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
 				<data>BgAmCgEDAwMAAAACAAAwAQAAkAA=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
 				<string>Enable 128MB DVMT-prealloc, 0x0a2e0008</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>CAAuCgEDAwMAAAAE</data>
 				<key>Name</key>
@@ -590,26 +594,32 @@
 			<dict>
 				<key>Comment</key>
 				<string>Enable 128MB DVMT-prealloc, 48MB framebuffer, 48MB cursor, 0x0a2e0008</string>
+				<key>Disabled</key>
+				<true/>
 				<key>Find</key>
 				<data>CAAuCgEDAwMAAAAEAAAgAgAAUAE=</data>
 				<key>Name</key>
-				<string>disabled:AppleIntelFramebufferAzul</string>
+				<string>AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
 				<data>CAAuCgEDAwMAAAAIAAAAAwAAAAM=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
 				<string>Enable 128MB DVMT-prealloc, 48MB framebuffer, 48MB cursor, 0x0a260006</string>
+				<key>Disabled</key>
+				<true/>
 				<key>Find</key>
 				<data>BgAmCgEDAwMAAAACAAAwAQAAYAA=</data>
 				<key>Name</key>
-				<string>disabled:AppleIntelFramebufferAzul</string>
+				<string>AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
 				<data>BgAmCgEDAwMAAAAIAAAAAwAAAAM=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
 				<string>HDMI-audio, port 0105(12), 0x0a2e0008, 0x0a16000c, 0x0a2e000d, 0x0a26000d</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Name</key>
 				<string>AppleIntelFramebufferAzul</string>
 				<key>Find</key>
@@ -620,8 +630,10 @@
 			<dict>
 				<key>Comment</key>
 				<string>HDMI-audio, port 0105(12), 0x0a260005 0x0a260006, 0x0d220003, 0x0a2e000a, 0x0a26000a</string>
+				<key>Disabled</key>
+				<true/>
 				<key>Name</key>
-				<string>disabled:AppleIntelFramebufferAzul</string>
+				<string>AppleIntelFramebufferAzul</string>
 				<key>Find</key>
 				<data>AQUJAAAEAACHAAAA</data>
 				<key>Replace</key>
