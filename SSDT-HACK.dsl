@@ -412,8 +412,9 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
         Method(_Q11)
         {
             // Brightness Down
-            If (LOr (LEqual (TPDF, 0x04), LEqual (TPDF, 0x06)))
+            If (LNotEqual(TPDF,0x08))
             {
+                // Synaptics/ALPS
                 Notify(\_SB.PCI0.LPCB.PS2K, 0x0405)
             }
             Else
@@ -426,9 +427,9 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
         Method(_Q12)
         {
             // Brightness Up
-            If (LOr (LEqual (TPDF, 0x04), LEqual (TPDF, 0x06)))
+            If (LNotEqual(TPDF,0x08))
             {
-                // Synaptics
+                // Synaptics/ALPS
                 Notify(\_SB.PCI0.LPCB.PS2K, 0x0406)
             }
             Else
