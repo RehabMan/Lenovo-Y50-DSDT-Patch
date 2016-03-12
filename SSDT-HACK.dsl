@@ -6,7 +6,7 @@
 
 // Note: No solution for missing IAOE here, but so far, not a problem.
 
-DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
+DefinitionBlock ("", "SSDT", 2, "hack", "hack", 0)
 {
     External(_SB.PCI0, DeviceObj)
     External(_SB.PCI0.LPCB, DeviceObj)
@@ -35,7 +35,7 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
             //"Windows 2013",       // Windows 8.1/Windows Server 2012 R2
             //"Windows 2015",       // Windows 10/Windows Server TP
         }, Local0)
-        Return (LNotEqual(Match(Local0, MEQ, Arg0, MTR, 0, 0), Ones))
+        Return (Ones != Match(Local0, MEQ, Arg0, MTR, 0, 0))
     }
 
 //
@@ -170,7 +170,7 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
                 RCB1, 32, // Root Complex Base Address
             }
             // address is in bits 31:14
-            OperationRegion(FDM1, SystemMemory, Add(And(RCB1,Not(Subtract(ShiftLeft(1,14),1))),0x3418), 4)
+            OperationRegion(FDM1, SystemMemory, (RCB1 & Not((1<<14)-1)) + 0x3418, 4)
             Field(FDM1, DWordAcc, NoLock, Preserve)
             {
                 ,13,    // skip first 13 bits
@@ -187,15 +187,15 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
             {
                 // disable EHCI#1
                 // put EHCI#1 in D3hot (sleep mode)
-                Store(3, ^^EH01.PSTE)
+                ^^EH01.PSTE = 3
                 // disable EHCI#1 PCI space
-                Store(1, ^^LPCB.FDE1)
+                ^^LPCB.FDE1 = 1
 
                 // disable EHCI#2
                 // put EHCI#2 in D3hot (sleep mode)
-                Store(3, ^^EH02.PSTE)
+                ^^EH02.PSTE = 3
                 // disable EHCI#2 PCI space
-                Store(1, ^^LPCB.FDE2)
+                ^^LPCB.FDE2 = 1
             }
         }
     }
@@ -248,7 +248,7 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
                 Name(_CID, "diagsvault")
                 Method(_DSM, 4)
                 {
-                    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                    If (!Arg2) { Return (Buffer() { 0x03 } ) }
                     Return (Package() { "address", 0x57 })
                 }
             }
@@ -265,7 +265,7 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
         // Select specific keyboard map in VoodooPS2Keyboard.kext
         Method(_DSM, 4)
         {
-            If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+            If (!Arg2) { Return (Buffer() { 0x03 } ) }
             Return (Package()
             {
                 "RM,oem-id", "LENOVO",
