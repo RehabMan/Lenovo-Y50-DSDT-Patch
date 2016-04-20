@@ -605,6 +605,18 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>Enable 192MB DVMT-prealloc, 0x0a2e0008</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>CAAuCgEDAwMAAAAE</data>
+				<key>Name</key>
+				<string>AppleIntelFramebufferAzul</string>
+				<key>Replace</key>
+				<data>CAAuCgEDAwMAAAAM</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>Enable 128MB DVMT-prealloc, 48MB framebuffer, 48MB cursor, 0x0a2e0008</string>
 				<key>Disabled</key>
 				<true/>
