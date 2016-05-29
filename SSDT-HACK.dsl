@@ -292,6 +292,7 @@ DefinitionBlock ("", "SSDT", 2, "hack", "hack", 0)
                 "MultiFingerVerticalDivisor", 9,
                 "MultiFingerHorizontalDivisor", 9,
                 "MomentumScrollThreshY", 12,
+                "DynamicEWMode", ">y",
             },
             "Keyboard", Package()
             {
