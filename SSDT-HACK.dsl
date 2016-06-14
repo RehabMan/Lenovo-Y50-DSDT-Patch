@@ -65,25 +65,6 @@ DefinitionBlock ("", "SSDT", 2, "hack", "hack", 0)
         Name(_HID, "UIA00000")
         Name(RMCF, Package()
         {
-            // EH01 has no ports (XHCIMux is used to force USB3 routing OFF)
-            "EH01", Package()
-            {
-                "port-count", Buffer() { 0, 0, 0, 0 },
-                "ports", Package() { },
-            },
-            // EH02 has a single internal port (for the RM hub)
-            "EH02", Package()
-            {
-                //"port-count", Buffer() { 0x06, 0, 0, 0 },
-                "ports", Package()
-                {
-                    "PR21", Package()
-                    {
-                        "UsbConnector", 255,
-                        "port", Buffer() { 0x01, 0, 0, 0 },
-                    },
-                },
-            },
             // XHC overrides
             "8086_8xxx", Package()
             {
