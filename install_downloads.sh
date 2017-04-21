@@ -178,6 +178,18 @@ install_kext AppleHDA_ALC283.kext
 # USBXHC_Envy.kext is not used any more (using USBInjectAll.kext instead)
 $SUDO rm -Rf $SLE/USBXHC_y50.kext $KEXTDEST/USBXHC_Envy.kext
 
+# install AppleBacklightInjector.kext on 10.12
+#  (set BKLT=1 in SSDT-HACK.dsl to use it, set BKLT=0 to use IntelBacklight.kext)
+if [[ $MINOR_VER -ge 12 ]]; then
+    cd kexts
+    install_kext AppleBacklightInjector.kext
+    cd ..
+    # remove IntelBacklight.kext if it is installed (doesn't work with 10.12)
+    if [ -d $KEXTDEST/IntelBacklight.kext ]; then
+        $SUDO rm -Rf $KEXTDEST/IntelBacklight.kext
+    fi
+fi
+
 #check_directory *.kext
 #if [ $? -ne 0 ]; then
 #    for kext in *.kext; do
