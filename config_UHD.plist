@@ -621,7 +621,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Enable 128MB DVMT-prealloc, 0x0a2e0008</string>
+				<string>Enable 128MB DVMT-prealloc, 2 ports only 0x0a2e0008, credit RehabMan</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
@@ -629,7 +629,7 @@
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
-				<data>CAAuCgEDAwMAAAAI</data>
+				<data>CAAuCgEDAgIAAAAI</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -690,6 +690,18 @@
 				<data>AQUJAAAEAAAHAQAA</data>
 				<key>Replace</key>
 				<data>AQUSAAAIAAAHAQAA</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>0x0a260006, disable 0204 port (RehabMan)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
+				<key>Find</key>
+				<data>AgQJAAAEAACHAAAA</data>
+				<key>Replace</key>
+				<data>/wAAAAEAAABAAAAA</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
