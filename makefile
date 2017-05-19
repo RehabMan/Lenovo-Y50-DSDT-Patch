@@ -48,6 +48,7 @@ install: $(PRODUCTS)
 	rm -f $(EFIDIR)/EFI/CLOVER/ACPI/patched/SSDT-3.aml
 	rm -f $(EFIDIR)/EFI/CLOVER/ACPI/patched/SSDT-4.aml
 	rm -f $(EFIDIR)/EFI/CLOVER/ACPI/patched/SSDT-9.aml
+	rm -f $(EFIDIR)/EFI/CLOVER/ACPI/patched/SSDT.aml
 	cp $(BUILDDIR)/SSDT-HACK.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched/SSDT-HACK.aml
 
 $(HDAINJECT): $(RESOURCES)/*.plist ./patch_hda.sh
