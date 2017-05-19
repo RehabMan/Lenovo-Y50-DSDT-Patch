@@ -39,6 +39,20 @@ DefinitionBlock ("", "SSDT", 2, "hack", "hack", 0)
     }
 
 //
+// Power management with X86PlatformPlugin.kext
+//
+
+    External(\_PR.CPU0, DeviceObj)
+    Method (\_PR.CPU0._DSM, 4)
+    {
+        If (!Arg2) { Return (Buffer() { 0x03 } ) }
+        Return (Package()
+        {
+            "plugin-type", 1
+        })
+    }
+
+//
 // ACPISensors configuration (ACPISensors.kext is not installed by default)
 //
 
@@ -532,10 +546,10 @@ DefinitionBlock ("", "SSDT", 2, "hack", "hack", 0)
         })
     }
 
-    External(_SB.PCI0.LPCB.EC0, DeviceObj)
+    External(_SB.PCI0.LPCB.EC, DeviceObj)
     External(TPDF, FieldUnitObj)
 
-    Scope(_SB.PCI0.LPCB.EC0)
+    Scope(_SB.PCI0.LPCB.EC)
     {
         // The native _Qxx methods in DSDT are renamed XQxx,
         // so notifications from the EC driver will land here.
@@ -583,7 +597,7 @@ DefinitionBlock ("", "SSDT", 2, "hack", "hack", 0)
         "StartupDelay", 10,
     })
 
-    Scope(_SB.PCI0.LPCB.EC0)
+    Scope(_SB.PCI0.LPCB.EC)
     {
         // This is an override for battery methods that access EC fields
         // larger than 8-bit.
