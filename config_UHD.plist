@@ -143,11 +143,6 @@
 			<key>Generate</key>
 			<false/>
 		</dict>
-		<key>SortedOrder</key>
-		<array>
-			<string>SSDT.aml</string>
-			<string>SSDT-HACK.aml</string>
-		</array>
 	</dict>
 	<key>Boot</key>
 	<dict>
@@ -503,7 +498,7 @@
 				<key>Find</key>
 				<data>PYUI7BA=</data>
 				<key>MatchOS</key>
-				<string>10.9.x,10.10.x,10.11.x,10.12.x</string>
+				<string>10.9.x,10.10.x,10.11.x,10.12.x,10.13.x</string>
 				<key>Name</key>
 				<string>com.apple.driver.AppleHDA</string>
 				<key>Replace</key>
@@ -520,30 +515,6 @@
 				<string>com.apple.driver.AppleHDA</string>
 				<key>Replace</key>
 				<data>PQAAAAA=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Boot graphics glitch, 10.10.x/10.11.x</string>
-				<key>MatchOS</key>
-				<string>10.10.x,10.11.x</string>
-				<key>Find</key>
-				<data>AQAAdRc=</data>
-				<key>Name</key>
-				<string>com.apple.iokit.IOGraphicsFamily</string>
-				<key>Replace</key>
-				<data>AQAAdBc=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Boot graphics glitch, 10.12.dp1 (credit denskop)</string>
-				<key>MatchOS</key>
-				<string>10.12.x</string>
-				<key>Find</key>
-				<data>AQAAdSU=</data>
-				<key>Name</key>
-				<string>com.apple.iokit.IOGraphicsFamily</string>
-				<key>Replace</key>
-				<data>AQAA6yU=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
