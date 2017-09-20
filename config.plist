@@ -138,8 +138,6 @@
 		</array>
 		<key>SSDT</key>
 		<dict>
-			<key>DropOem</key>
-			<false/>
 			<key>Generate</key>
 			<false/>
 		</dict>
@@ -148,10 +146,6 @@
 	<dict>
 		<key>Arguments</key>
 		<string>kext-dev-mode=1 nv_disable=1 dart=0</string>
-		<key>Legacy</key>
-		<string>PBR</string>
-		<key>Log</key>
-		<false/>
 		<key>NeverHibernate</key>
 		<true/>
 		<key>Secure</key>
@@ -411,8 +405,6 @@
 		</dict>
 		<key>USB</key>
 		<dict>
-			<key>AddClockID</key>
-			<false/>
 			<key>FixOwnership</key>
 			<true/>
 			<key>Inject</key>
@@ -448,12 +440,12 @@
 		<key>Theme</key>
 		<string>bluemac</string>
 	</dict>
-	<key>#Graphics</key>
+	<key>Graphics</key>
 	<dict>
 		<key>Inject</key>
 		<dict>
 			<key>Intel</key>
-			<true/>
+			<false/>
 		</dict>
 		<key>ig-platform-id</key>
 		<string>0x0a260006</string>
