@@ -511,6 +511,8 @@
 			<dict>
 				<key>Comment</key>
 				<string>Enable TRIM for non-Apple SSDs</string>
+				<key>Disabled</key>
+				<true/>
 				<key>Find</key>
 				<data>AEFQUExFIFNTRAA=</data>
 				<key>Name</key>
