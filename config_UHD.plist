@@ -417,9 +417,27 @@
 	</array>
 	<key>GUI</key>
 	<dict>
+		<key>Custom</key>
+		<dict>
+			<key>Entries</key>
+			<array>
+				<dict>
+					<key>Hidden</key>
+					<true/>
+					<key>Type</key>
+					<string>OSXRecovery</string>
+				</dict>
+				<dict>
+					<key>Type</key>
+					<string>Windows</string>
+					<key>Title</key>
+					<string>Windows</string>
+				</dict>
+			</array>
+		</dict>
 		<key>Hide</key>
 		<array>
-			<string>\EFI\BOOT\BOOTX64.EFI</string>
+			<string>Preboot</string>
 		</array>
 		<key>Mouse</key>
 		<dict>
