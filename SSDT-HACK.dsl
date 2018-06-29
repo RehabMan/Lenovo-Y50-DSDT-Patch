@@ -6,7 +6,7 @@
 
 // Note: No solution for missing IAOE here, but so far, not a problem.
 
-DefinitionBlock ("", "SSDT", 2, "hack", "hack", 0)
+DefinitionBlock("", "SSDT", 2, "hack", "_HACK", 0)
 {
     External(_SB.PCI0, DeviceObj)
     External(_SB.PCI0.LPCB, DeviceObj)
@@ -36,20 +36,6 @@ DefinitionBlock ("", "SSDT", 2, "hack", "hack", 0)
             //"Windows 2015",       // Windows 10/Windows Server TP
         }, Local0)
         Return (Ones != Match(Local0, MEQ, Arg0, MTR, 0, 0))
-    }
-
-//
-// Power management with X86PlatformPlugin.kext
-//
-
-    External(\_PR.CPU0, DeviceObj)
-    Method (\_PR.CPU0._DSM, 4)
-    {
-        If (!Arg2) { Return (Buffer() { 0x03 } ) }
-        Return (Package()
-        {
-            "plugin-type", 1
-        })
     }
 
 //

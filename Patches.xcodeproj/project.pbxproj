@@ -15,7 +15,7 @@
 		8467C38E1A23A9FC00FCF396 /* mount_efi.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = mount_efi.sh; sourceTree = "<group>"; };
 		84B540371ACB34A200D8ABAE /* Platforms.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Platforms.plist; path = Resources_ALC283/Platforms.plist; sourceTree = "<group>"; };
 		ED2686291BF5511600AB55C7 /* SSDT-HACK.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = "SSDT-HACK.dsl"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.simpleColoring; };
-		ED3B52DC1BBD74E400BA378A /* layout3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = layout3.plist; path = Resources_ALC283/layout3.plist; sourceTree = "<group>"; };
+		ED3B52DC1BBD74E400BA378A /* layout2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = layout2.plist; path = Resources_ALC283/layout2.plist; sourceTree = "<group>"; };
 		ED3F518A1A2029DE0060691A /* install_downloads.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = install_downloads.sh; sourceTree = "<group>"; };
 		ED3F518B1A2029DE0060691A /* download.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = download.sh; sourceTree = "<group>"; };
 		ED4664C51B4F61BB00CC0F9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = USBXHC_y50.kext/Contents/Info.plist; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 				84490D5D1A14945B000E1BFB /* patch_hda.sh */,
 				845CCF5C19A2B0F000C6B5C0 /* ahhcd.plist */,
 				84B540371ACB34A200D8ABAE /* Platforms.plist */,
-				ED3B52DC1BBD74E400BA378A /* layout3.plist */,
+				ED3B52DC1BBD74E400BA378A /* layout2.plist */,
 			);
 			name = audio;
 			sourceTree = "<group>";
