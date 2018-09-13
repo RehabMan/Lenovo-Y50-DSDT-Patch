@@ -6,8 +6,8 @@ SUDO=sudo
 TAG=`pwd`/tools/tag
 SLE=/System/Library/Extensions
 LE=/Library/Extensions
-EXCEPTIONS="Sensors|FakePCIID_BCM57XX|FakePCIID_AR9280|FakePCIID_Intel_GbX|FakePCIID_XHCIMux|BrcmPatchRAM|BrcmBluetoothInjector|BrcmFirmwareData|USBInjectAll"
-ESSENTIAL="FakeSMC.kext RealtekRTL8111.kext USBInjectAll.kext Lilu.kext IntelGraphicsFixup.kext AppleBacklightInjector.kext IntelBacklight.kext VoodooPS2Controller.kext FakePCIID.kext FakePCIID_Intel_HD_Graphics.kext"
+EXCEPTIONS="Sensors|FakePCIID_BCM57XX|FakePCIID_AR9280|FakePCIID_Intel_GbX|FakePCIID_XHCIMux|BrcmPatchRAM|BrcmBluetoothInjector|BrcmFirmwareData|USBInjectAll|WhateverName"
+ESSENTIAL="FakeSMC.kext RealtekRTL8111.kext USBInjectAll.kext Lilu.kext WhateverGreen.kext AppleBacklightInjector.kext IntelBacklight.kext VoodooPS2Controller.kext FakePCIID.kext FakePCIID_Intel_HD_Graphics.kext"
 
 # extract minor version (eg. 10.9 vs. 10.10 vs. 10.11)
 MINOR_VER=$([[ "$(sw_vers -productVersion)" =~ [0-9]+\.([0-9]+) ]] && echo ${BASH_REMATCH[1]})
@@ -33,6 +33,11 @@ function check_directory
 function nothing
 {
     :
+}
+
+function remove_kext
+{
+    $SUDO rm -Rf $SLE/"$1" $LE/"$1"
 }
 
 function install_kext
@@ -95,14 +100,22 @@ function install
     check_directory $out/Release/*.app
     if [ $? -ne 0 ]; then
         for app in $out/Release/*.app; do
-            install_app $app
+            # install the app when it exists regardless of filter
+            appname="`basename $app`"
+            if [[ -e "/Applications/$appname" || -e "/Applications/$appname" || "$2" == "" || "`echo $appname | grep -vE "$2"`" != "" ]]; then
+                install_app $app
+            fi
         done
         installed=1
     fi
     check_directory $out/*.app
     if [ $? -ne 0 ]; then
         for app in $out/*.app; do
-            install_app $app
+            # install the app when it exists regardless of filter
+            appname="`basename $app`"
+            if [[ -e "/Applications/$appname" || -e "/Applications/$appname" || "$2" == "" || "`echo $appname | grep -vE "$2"`" != "" ]]; then
+                install_app $app
+            fi
         done
         installed=1
     fi
@@ -160,6 +173,10 @@ if [ $? -ne 0 ]; then
         # remove old FakePCIID_HD4600_HD4400.kext
         $SUDO rm -Rf $SLE/FakePCIID_HD4600_HD4400.kext $KEXTDEST/FakePCIID_HD4600_HD4400.kext
     fi
+    # IntelGraphicsFixup.kext is no longer used (replaced by WhateverGreen.kext)
+    remove_kext IntelGraphicsFixup.kext
+    # Same for CoreDisplayFixup.kext
+    remove_kext CoreDisplayFixup.kext
     cd ../..
 fi
 
@@ -203,6 +220,8 @@ for kext in $ESSENTIAL; do
         echo updating $EFI/EFI/CLOVER/kexts/Other/$kext
         cp -Rf $KEXTDEST/$kext $EFI/EFI/CLOVER/kexts/Other
     fi
+    rm -Rf $EFI/EFI/CLOVER/kexts/Other/IntelGraphicsFixup.kext
+    rm -Rf $EFI/EFI/CLOVER/kexts/Other/CoreDisplayFixup.kext
 done
 
 # unzip/install tools

@@ -52,8 +52,10 @@ download os-x-brcmpatchram RehabMan-BrcmPatchRAM
 download os-x-usb-inject-all RehabMan-USBInjectAll
 #download os-x-acpi-debug RehabMan-Debug
 download_latest_notbitbucket "https://github.com" "https://github.com/vit9696/Lilu/releases" "RELEASE" "nbb_vit9696-Lilu.zip"
-download_latest_notbitbucket "https://github.com" "https://github.com/lvs1974/IntelGraphicsFixup/releases" "RELEASE" "nbb_lvs1974-IntelGraphicsFixup.zip"
-download_latest_notbitbucket "https://github.com" "https://github.com/PMHeart/CoreDisplayFixup/releases" "RELEASE" "nbb_PMHeart-CoreDisplayFixup.zip"
+# IntelGraphicsFixup.kext and CoreDisplayFixup.kext replaced by WhateverGreen.kext
+#download_latest_notbitbucket "https://github.com" "https://github.com/lvs1974/IntelGraphicsFixup/releases" "RELEASE" "nbb_lvs1974-IntelGraphicsFixup.zip"
+#download_latest_notbitbucket "https://github.com" "https://github.com/PMHeart/CoreDisplayFixup/releases" "RELEASE" "nbb_PMHeart-CoreDisplayFixup.zip"
+download_latest_notbitbucket "https://github.com" "https://github.com/acidanthera/WhateverGreen/releases" "RELEASE" "nbb_acidanthera-WhateverGreen.zip"
 cd ..
 
 # download tools
