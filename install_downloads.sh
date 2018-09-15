@@ -185,7 +185,7 @@ fi
 # patching AppleHDA
 HDA=ALC283
 ./patch_hda.sh "$HDA"
-install_kext AppleHDA_ALC283.kext
+install_kext AppleHDA_$HDA.kext
 
 # USBXHC_Envy.kext is not used any more (using USBInjectAll.kext instead)
 $SUDO rm -Rf $SLE/USBXHC_y50.kext $KEXTDEST/USBXHC_Envy.kext
