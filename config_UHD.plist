@@ -355,6 +355,18 @@
 		<array>
 			<dict>
 				<key>Comment</key>
+				<string>Enable TRIM for non-Apple SSDs</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>AEFQUExFIFNTRAA=</data>
+				<key>Name</key>
+				<string>com.apple.iokit.IOAHCIBlockStorage</string>
+				<key>Replace</key>
+				<data>AAAAAAAAAAAAAAA=</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>AppleHDA ALC283 (1 of 4) 0x11d41984 to 0x10ec0283</string>
 				<key>Find</key>
 				<data>PYQZ1BE=</data>
@@ -401,78 +413,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Enable TRIM for non-Apple SSDs</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>AEFQUExFIFNTRAA=</data>
-				<key>Name</key>
-				<string>com.apple.iokit.IOAHCIBlockStorage</string>
-				<key>Replace</key>
-				<data>AAAAAAAAAAAAAAA=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>10.9.5 5Ghz US FCC, svko</string>
-				<key>MatchOS</key>
-				<string>10.9.5</string>
-				<key>Find</key>
-				<data>WFQAIBcnIAAA</data>
-				<key>Name</key>
-				<string>com.apple.driver.AirPort.Brcm4360</string>
-				<key>Replace</key>
-				<data>WFQAG2cxlQAJ</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>10.10.2+ 5Ghz US FCC, the-darkvoid</string>
-				<key>MatchOS</key>
-				<string>10.10.x,10.11.x</string>
-				<key>Find</key>
-				<data>QYP8/3QsSA==</data>
-				<key>Name</key>
-				<string>com.apple.driver.AirPort.Brcm4360</string>
-				<key>Replace</key>
-				<data>ZscGVVPrKw==</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>AirPortBrcm4360 - fcvo, 10.12.x (credit the-darkvoid)</string>
-				<key>MatchOS</key>
-				<string>10.12.x</string>
-				<key>Find</key>
-				<data>gflSqgAAdSk=</data>
-				<key>Name</key>
-				<string>com.apple.driver.AirPort.Brcm4360</string>
-				<key>Replace</key>
-				<data>gflSqgAAZpA=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>10.10.2+ BT4LE-Handoff-Hotspot, Dokterdok</string>
-				<key>MatchOS</key>
-				<string>10.10.x</string>
-				<key>Find</key>
-				<data>SIXAdFwPt0g=</data>
-				<key>Name</key>
-				<string>com.apple.iokit.IOBluetoothFamily</string>
-				<key>Replace</key>
-				<data>Qb4PAAAA61k=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>10.11.dp BT4LE-Handoff-Hotspot, credit RehabMan based on Dokterdok patch</string>
-				<key>MatchOS</key>
-				<string>10.11.x,10.12.x</string>
-				<key>Find</key>
-				<data>SIX/dEdIiwc=</data>
-				<key>Name</key>
-				<string>com.apple.iokit.IOBluetoothFamily</string>
-				<key>Replace</key>
-				<data>Qb4PAAAA60Q=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>change F%uT%04x to F%uTxxxx in AppleBacklightInjector.kext (credit RehabMan)</string>
 				<key>Disabled</key>
 				<false/>
@@ -482,18 +422,6 @@
 				<data>RiV1VCUwNHgA</data>
 				<key>Replace</key>
 				<data>RiV1VHh4eHgA</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>0x0a2e0008, change PWMMax from 0x056c to 0x0ad9 (RehabMan)</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Name</key>
-				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
-				<key>Find</key>
-				<data>AAAAYGwFAABsBQAA</data>
-				<key>Replace</key>
-				<data>AAAAYNkKAADZCgAA</data>
 			</dict>
 		</array>
 	</dict>
