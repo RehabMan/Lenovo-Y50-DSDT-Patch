@@ -177,7 +177,7 @@
 				<key>device-id</key>
 				<data>EgQAAA==</data>
 				<key>hda-gfx</key>
-				<string>onboard-1</string>
+				<data>b25ib2FyZC0x</data>
 				<key>framebuffer-patch-enable</key>
 				<data>AQAAAA==</data>
 				<key>framebuffer-stolenmem</key>
@@ -213,7 +213,7 @@
 				<key>layout-id</key>
 				<data>AgAAAA==</data>
 				<key>hda-gfx</key>
-				<string>onboard-1</string>
+				<data>b25ib2FyZC0x</data>
 			</dict>
 			<key>PciRoot(0)/Pci(0x1d,0)</key>
 			<dict>
