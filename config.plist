@@ -6,6 +6,8 @@
 	<dict>
 		<key>DSDT</key>
 		<dict>
+			<key>DropOEM_DSM</key>
+			<false/>
 			<key>Fixes</key>
 			<dict>
 				<key>FixTMR</key>
