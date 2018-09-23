@@ -9,18 +9,14 @@
 /* Begin PBXFileReference section */
 		840152EF182AE45E00D58B0A /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; usesTabs = 1; };
 		8406FCD6188627B8006D8DB7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		84490D5D1A14945B000E1BFB /* patch_hda.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = patch_hda.sh; sourceTree = "<group>"; };
 		8455352818E65265001ADBFD /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		845CCF5C19A2B0F000C6B5C0 /* ahhcd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ahhcd.plist; path = Resources_ALC283/ahhcd.plist; sourceTree = "<group>"; };
-		8467C38E1A23A9FC00FCF396 /* mount_efi.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = mount_efi.sh; sourceTree = "<group>"; };
 		84B540371ACB34A200D8ABAE /* Platforms.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Platforms.plist; path = Resources_ALC283/Platforms.plist; sourceTree = "<group>"; };
 		ED2686291BF5511600AB55C7 /* SSDT-HACK.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = "SSDT-HACK.dsl"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.simpleColoring; };
 		ED3B52DC1BBD74E400BA378A /* layout2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = layout2.plist; path = Resources_ALC283/layout2.plist; sourceTree = "<group>"; };
 		ED3F518A1A2029DE0060691A /* install_downloads.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = install_downloads.sh; sourceTree = "<group>"; };
 		ED3F518B1A2029DE0060691A /* download.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = download.sh; sourceTree = "<group>"; };
 		ED4664C51B4F61BB00CC0F9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = USBXHC_y50.kext/Contents/Info.plist; sourceTree = "<group>"; };
-		ED4664C71B4F61D700CC0F9D /* Backlight.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Backlight.plist; sourceTree = "<group>"; };
-		ED4664C81B4F61D700CC0F9D /* patch_backlight.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = patch_backlight.sh; sourceTree = "<group>"; };
 		ED77A23B1B52B9AD00AF5EEB /* config_UHD.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config_UHD.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -33,19 +29,16 @@
 				ED77A23B1B52B9AD00AF5EEB /* config_UHD.plist */,
 				840152EF182AE45E00D58B0A /* makefile */,
 				ED2686291BF5511600AB55C7 /* SSDT-HACK.dsl */,
-				8467C38E1A23A9FC00FCF396 /* mount_efi.sh */,
 				ED3F518B1A2029DE0060691A /* download.sh */,
 				ED3F518A1A2029DE0060691A /* install_downloads.sh */,
-				ED4664C41B4F618100CC0F9D /* USBXHC_y50.kext */,
 				84B540381ACB34B600D8ABAE /* audio */,
-				ED4664C61B4F61C200CC0F9D /* backlight */,
+				ED4664C41B4F618100CC0F9D /* USBXHC_y50.kext */,
 			);
 			sourceTree = "<group>";
 		};
 		84B540381ACB34B600D8ABAE /* audio */ = {
 			isa = PBXGroup;
 			children = (
-				84490D5D1A14945B000E1BFB /* patch_hda.sh */,
 				845CCF5C19A2B0F000C6B5C0 /* ahhcd.plist */,
 				84B540371ACB34A200D8ABAE /* Platforms.plist */,
 				ED3B52DC1BBD74E400BA378A /* layout2.plist */,
@@ -59,15 +52,6 @@
 				ED4664C51B4F61BB00CC0F9D /* Info.plist */,
 			);
 			name = USBXHC_y50.kext;
-			sourceTree = "<group>";
-		};
-		ED4664C61B4F61C200CC0F9D /* backlight */ = {
-			isa = PBXGroup;
-			children = (
-				ED4664C71B4F61D700CC0F9D /* Backlight.plist */,
-				ED4664C81B4F61D700CC0F9D /* patch_backlight.sh */,
-			);
-			name = backlight;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
