@@ -6,6 +6,8 @@
 	<dict>
 		<key>DSDT</key>
 		<dict>
+			<key>DropOEM_DSM</key>
+			<false/>
 			<key>Fixes</key>
 			<dict>
 				<key>FixTMR</key>
@@ -146,7 +148,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>kext-dev-mode=1 nv_disable=1 dart=0</string>
+		<string>kext-dev-mode=1 nv_disable=1 dart=0 -igfxnohdmi</string>
 		<key>NeverHibernate</key>
 		<true/>
 		<key>Secure</key>
@@ -156,242 +158,6 @@
 	</dict>
 	<key>Devices</key>
 	<dict>
-		<key>Arbitrary</key>
-		<array>
-			<dict>
-				<key>Comment</key>
-				<string>Intel HD4600</string>
-				<key>PciAddr</key>
-				<string>00:02.00</string>
-				<key>CustomProperties</key>
-				<array>
-					<dict>
-						<key>Key</key>
-						<string>model</string>
-						<key>Value</key>
-						<string>Intel HD Graphics 4600</string>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>device-id</string>
-						<key>Value</key>
-						<data>EgQAAA==</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>hda-gfx</string>
-						<key>Value</key>
-						<string>onboard-1</string>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>AAPL,ig-platform-id</string>
-						<key>Value</key>
-						<data>BgAmCg==</data>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Intel HDA</string>
-				<key>PciAddr</key>
-				<string>00:1B.00</string>
-				<key>CustomProperties</key>
-				<array>
-					<dict>
-						<key>Key</key>
-						<string>layout-id</string>
-						<key>Value</key>
-						<data>AgAAAA==</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>PinConfigurations</string>
-						<key>Value</key>
-						<data></data>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Intel HDMI HDA</string>
-				<key>PciAddr</key>
-				<string>00:03.00</string>
-				<key>CustomProperties</key>
-				<array>
-					<dict>
-						<key>Key</key>
-						<string>layout-id</string>
-						<key>Value</key>
-						<data>AgAAAA==</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>hda-gfx</string>
-						<key>Value</key>
-						<string>onboard-1</string>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Intel EHCI #1</string>
-				<key>PciAddr</key>
-				<string>00:1D.00</string>
-				<key>CustomProperties</key>
-				<array>
-					<dict>
-						<key>Key</key>
-						<string>subsystem-id</string>
-						<key>Value</key>
-						<data>cHIAAA==</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>subsystem-vendor-id</string>
-						<key>Value</key>
-						<data>hoAAAA==</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>AAPL,current-available</string>
-						<key>Value</key>
-						<integer>2100</integer>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>AAPL,current-extra</string>
-						<key>Value</key>
-						<integer>2200</integer>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>AAPL,current-extra-in-sleep</string>
-						<key>Value</key>
-						<integer>1600</integer>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>AAPL,max-port-current-in-sleep</string>
-						<key>Value</key>
-						<integer>2100</integer>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Intel EHCI #2</string>
-				<key>PciAddr</key>
-				<string>00:1A.00</string>
-				<key>CustomProperties</key>
-				<array>
-					<dict>
-						<key>Key</key>
-						<string>subsystem-id</string>
-						<key>Value</key>
-						<data>cHIAAA==</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>subsystem-vendor-id</string>
-						<key>Value</key>
-						<data>hoAAAA==</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>AAPL,current-available</string>
-						<key>Value</key>
-						<integer>2100</integer>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>AAPL,current-extra</string>
-						<key>Value</key>
-						<integer>2200</integer>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>AAPL,current-extra-in-sleep</string>
-						<key>Value</key>
-						<integer>1600</integer>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>AAPL,max-port-current-in-sleep</string>
-						<key>Value</key>
-						<integer>2100</integer>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Intel XHCI</string>
-				<key>PciAddr</key>
-				<string>00:14.00</string>
-				<key>CustomProperties</key>
-				<array>
-					<dict>
-						<key>Key</key>
-						<string>subsystem-id</string>
-						<key>Value</key>
-						<data>cHIAAA==</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>subsystem-vendor-id</string>
-						<key>Value</key>
-						<data>hoAAAA==</data>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>AAPL,current-available</string>
-						<key>Value</key>
-						<integer>2100</integer>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>AAPL,current-extra</string>
-						<key>Value</key>
-						<integer>2200</integer>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>AAPL,current-extra-in-sleep</string>
-						<key>Value</key>
-						<integer>1600</integer>
-					</dict>
-					<dict>
-						<key>Key</key>
-						<string>AAPL,max-port-current-in-sleep</string>
-						<key>Value</key>
-						<integer>2100</integer>
-					</dict>
-					<dict>
-						<key>Comment</key>
-						<string>No XHC to EHC port routing for USB2</string>
-						<key>Key</key>
-						<string>RM,pr2-force</string>
-						<key>Value</key>
-						<data>/z8AAA==</data>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Intel LPC</string>
-				<key>PciAddr</key>
-				<string>00:1F.00</string>
-				<key>CustomProperties</key>
-				<array>
-					<dict>
-						<key>Key</key>
-						<string>compatible</string>
-						<key>Value</key>
-						<string>pci8086,9c43</string>
-					</dict>
-				</array>
-			</dict>
-		</array>
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
@@ -401,6 +167,114 @@
 		<dict>
 			<key>IntelGFX</key>
 			<string>0x04128086</string>
+		</dict>
+		<key>Properties</key>
+		<dict>
+			<key>PciRoot(0)/Pci(0x02,0)</key>
+			<dict>
+				<key>AAPL,ig-platform-id</key>
+				<data>BgAmCg==</data>
+				<key>model</key>
+				<string>Intel HD Graphics 4600</string>
+				<key>device-id</key>
+				<data>EgQAAA==</data>
+				<key>hda-gfx</key>
+				<data>b25ib2FyZC0x</data>
+				<key>framebuffer-patch-enable</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-cursormem</key>
+				<data>AACQAA==</data>
+				<key>framebuffer-con1-enable</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-con1-pipe</key>
+				<data>EgAAAA==</data>
+				<key>framebuffer-con1-type</key>
+				<data>AAgAAA==</data>
+				<key>framebuffer-con2-enable</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-con2-alldata</key>
+				<data>/wAAAAEAAABAAAAA</data>
+			</dict>
+			<key>PciRoot(0)/Pci(0x1b,0)</key>
+			<dict>
+				<key>#Comment</key>
+				<string>Intel HDA</string>
+				<key>layout-id</key>
+				<data>AgAAAA==</data>
+				<key>PinConfigurations</key>
+				<data></data>
+			</dict>
+			<key>PciRoot(0)/Pci(0x03,0)</key>
+			<dict>
+				<key>#Comment</key>
+				<string>Intel HDMI HDA</string>
+				<key>layout-id</key>
+				<data>AgAAAA==</data>
+				<key>hda-gfx</key>
+				<data>b25ib2FyZC0x</data>
+			</dict>
+			<key>PciRoot(0)/Pci(0x1d,0)</key>
+			<dict>
+				<key>#Comment</key>
+				<string>Intel EHCI #1</string>
+				<key>subsystem-id</key>
+				<data>cHIAAA==</data>
+				<key>subsystem-vendor-id</key>
+				<data>hoAAAA==</data>
+				<key>AAPL,current-available</key>
+				<integer>2100</integer>
+				<key>AAPL,current-extra</key>
+				<integer>2200</integer>
+				<key>AAPL,current-extra-in-sleep</key>
+				<integer>1600</integer>
+				<key>AAPL,max-port-current-in-sleep</key>
+				<integer>2100</integer>
+			</dict>
+			<key>PciRoot(0)/Pci(0x1a,0)</key>
+			<dict>
+				<key>#Comment</key>
+				<string>Intel EHCI #1</string>
+				<key>subsystem-id</key>
+				<data>cHIAAA==</data>
+				<key>subsystem-vendor-id</key>
+				<data>hoAAAA==</data>
+				<key>AAPL,current-available</key>
+				<integer>2100</integer>
+				<key>AAPL,current-extra</key>
+				<integer>2200</integer>
+				<key>AAPL,current-extra-in-sleep</key>
+				<integer>1600</integer>
+				<key>AAPL,max-port-current-in-sleep</key>
+				<integer>2100</integer>
+			</dict>
+			<key>PciRoot(0)/Pci(0x14,0)</key>
+			<dict>
+				<key>#Comment</key>
+				<string>Intel EHCI #1</string>
+				<key>subsystem-id</key>
+				<data>cHIAAA==</data>
+				<key>subsystem-vendor-id</key>
+				<data>hoAAAA==</data>
+				<key>AAPL,current-available</key>
+				<integer>2100</integer>
+				<key>AAPL,current-extra</key>
+				<integer>2200</integer>
+				<key>AAPL,current-extra-in-sleep</key>
+				<integer>1600</integer>
+				<key>AAPL,max-port-current-in-sleep</key>
+				<integer>2100</integer>
+				<key>#Comment-0</key>
+				<string>No XHC to EHC port routing for USB2</string>
+				<key>RM,pr2-force</key>
+				<data>/z8AAA==</data>
+			</dict>
+			<key>PciRoot(0)/Pci(0x1f,0)</key>
+			<dict>
+				<key>#Comment</key>
+				<string>Intel LPC</string>
+				<key>compatible</key>
+				<string>pci8086,9c43</string>
+			</dict>
 		</dict>
 		<key>USB</key>
 		<dict>
@@ -479,6 +353,18 @@
 		<array>
 			<dict>
 				<key>Comment</key>
+				<string>Enable TRIM for non-Apple SSDs</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>AEFQUExFIFNTRAA=</data>
+				<key>Name</key>
+				<string>com.apple.iokit.IOAHCIBlockStorage</string>
+				<key>Replace</key>
+				<data>AAAAAAAAAAAAAAA=</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>AppleHDA ALC283 (1 of 4) 0x11d41984 to 0x10ec0283</string>
 				<key>Find</key>
 				<data>PYQZ1BE=</data>
@@ -525,112 +411,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Enable TRIM for non-Apple SSDs</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>AEFQUExFIFNTRAA=</data>
-				<key>Name</key>
-				<string>com.apple.iokit.IOAHCIBlockStorage</string>
-				<key>Replace</key>
-				<data>AAAAAAAAAAAAAAA=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>10.9.5 5Ghz US FCC, svko</string>
-				<key>MatchOS</key>
-				<string>10.9.5</string>
-				<key>Find</key>
-				<data>WFQAIBcnIAAA</data>
-				<key>Name</key>
-				<string>com.apple.driver.AirPort.Brcm4360</string>
-				<key>Replace</key>
-				<data>WFQAG2cxlQAJ</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>10.10.2+ 5Ghz US FCC, the-darkvoid</string>
-				<key>MatchOS</key>
-				<string>10.10.x,10.11.x</string>
-				<key>Find</key>
-				<data>QYP8/3QsSA==</data>
-				<key>Name</key>
-				<string>com.apple.driver.AirPort.Brcm4360</string>
-				<key>Replace</key>
-				<data>ZscGVVPrKw==</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>AirPortBrcm4360 - fcvo, 10.12.x (credit the-darkvoid)</string>
-				<key>MatchOS</key>
-				<string>10.12.x</string>
-				<key>Find</key>
-				<data>gflSqgAAdSk=</data>
-				<key>Name</key>
-				<string>com.apple.driver.AirPort.Brcm4360</string>
-				<key>Replace</key>
-				<data>gflSqgAAZpA=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>10.10.2+ BT4LE-Handoff-Hotspot, Dokterdok</string>
-				<key>MatchOS</key>
-				<string>10.10.x</string>
-				<key>Find</key>
-				<data>SIXAdFwPt0g=</data>
-				<key>Name</key>
-				<string>com.apple.iokit.IOBluetoothFamily</string>
-				<key>Replace</key>
-				<data>Qb4PAAAA61k=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>10.11.dp BT4LE-Handoff-Hotspot, credit RehabMan based on Dokterdok patch</string>
-				<key>MatchOS</key>
-				<string>10.11.x,10.12.x</string>
-				<key>Find</key>
-				<data>SIX/dEdIiwc=</data>
-				<key>Name</key>
-				<string>com.apple.iokit.IOBluetoothFamily</string>
-				<key>Replace</key>
-				<data>Qb4PAAAA60Q=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string> 0x0a260006 9MB cursor bytes (vbo), 2 ports only (RehabMan)</string>
-				<key>Find</key>
-				<data>BgAmCgEDAwMAAAACAAAwAQAAYAA=</data>
-				<key>Name</key>
-				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
-				<key>Replace</key>
-				<data>BgAmCgEDAgIAAAACAAAwAQAAkAA=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>HDMI-audio, port 0105(12), 0x0a260005 0x0a260006, 0x0d220003, 0x0a2e000a, 0x0a26000a</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Name</key>
-				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
-				<key>Find</key>
-				<data>AQUJAAAEAACHAAAA</data>
-				<key>Replace</key>
-				<data>AQUSAAAIAACHAAAA</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>0x0a260006, disable 0204 port (RehabMan)</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Name</key>
-				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
-				<key>Find</key>
-				<data>AgQJAAAEAACHAAAA</data>
-				<key>Replace</key>
-				<data>/wAAAAEAAABAAAAA</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>change F%uT%04x to F%uTxxxx in AppleBacklightInjector.kext (credit RehabMan)</string>
 				<key>Disabled</key>
 				<false/>
@@ -640,6 +420,29 @@
 				<data>RiV1VCUwNHgA</data>
 				<key>Replace</key>
 				<data>RiV1VHh4eHgA</data>
+			</dict>
+		</array>
+		<key>KernelToPatch</key>
+		<array>
+			<dict>
+				<key>Comment</key>
+				<string>Disable panic kext logging on 10.13 release kernel (credit Vandroiy)</string>
+				<key>MatchOS</key>
+				<string>10.13.x</string>
+				<key>Find</key>
+				<data>igKEwHRE</data>
+				<key>Replace</key>
+				<data>igKEwOtE</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Disable panic kext logging on 10.14 release kernel (credit Vandroiy)</string>
+				<key>MatchOS</key>
+				<string>10.14.x</string>
+				<key>Find</key>
+				<data>igKEwHRC</data>
+				<key>Replace</key>
+				<data>igKEwOtC</data>
 			</dict>
 		</array>
 	</dict>
