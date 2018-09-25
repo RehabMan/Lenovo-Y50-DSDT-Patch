@@ -1,6 +1,6 @@
 .DS_Store
 stash/*
-downloads/*
+_downloads/*
 tools/*
 build/*
 AppleHDA_ALC283.kext/
