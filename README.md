@@ -11,6 +11,11 @@ http://www.tonymacx86.com/yosemite-laptop-guides/165188-guide-lenovo-y50-y70-uhd
 
 ### Change Log:
 
+2018-09-02
+
+- completed major changes for Mojave and use of AppleALC for audio
+
+
 2015-11-12
 
 - borrowed SSDT-HACK method from Lenovo u430 project

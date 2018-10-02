@@ -29,13 +29,13 @@ download_rehabman os-x-realtek-network RehabMan-Realtek-Network
 download_rehabman os-x-intel-backlight RehabMan-IntelBacklight
 download_rehabman os-x-acpi-battery-driver RehabMan-Battery
 download_rehabman os-x-eapd-codec-commander RehabMan-CodecCommander
-download_rehabman os-x-fake-pci-id RehabMan-FakePCIID
 download_rehabman os-x-brcmpatchram RehabMan-BrcmPatchRAM
 download_rehabman os-x-usb-inject-all RehabMan-USBInjectAll
 download_acidanthera Lilu acidanthera-Lilu
 download_acidanthera WhateverGreen acidanthera-WhateverGreen
 download_acidanthera AirportBrcmFixup acidanthera-AirportBrcmFixup
 download_acidanthera BT4LEContiunityFixup acidanthera-BT4LEContiunityFixup
+download_acidanthera AppleALC acidanthera-AppleALC
 cd ..
 
 # download tools

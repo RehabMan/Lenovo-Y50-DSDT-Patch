@@ -2,8 +2,7 @@
 #set -x
 
 EXCEPTIONS=
-ESSENTIAL=
-HDA=ALC283
+ESSENTIAL="AppleALC.kext"
 
 # include subroutines
 DIR=$(dirname ${BASH_SOURCE[0]})
@@ -21,13 +20,13 @@ remove_kext FakePCIID_XHCIMux.kext
 # USBXHC_y50.kext is not used anymore
 remove_kext USBXHC_y50.kext
 
+# using AppleALC.kext, remove AppleHDA injectors
+remove_kext AppleHDA_ALC283.kext
+
 # install required kexts
 install_download_kexts
 install_brcmpatchram_kexts
 install_backlight_kexts
-
-# create/install patched AppleHDA files
-install_hdainject
 
 # all kexts are now installed, so rebuild cache
 rebuild_kernel_cache

@@ -3,9 +3,6 @@ stash/*
 _downloads/*
 tools/*
 build/*
-AppleHDA_ALC283.kext/
-_hdainject_marker.txt
-Resources_ALC283/layout/*.zlib
 Patches.xcodeproj/project.xcworkspace/xcuserdata
 Patches.xcodeproj/project.xcworkspace/xcshareddata/Patches.xccheckout
 Patches.xcodeproj/project.xcworkspace/xcshareddata/

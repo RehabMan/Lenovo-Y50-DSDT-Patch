@@ -38,27 +38,6 @@ DefinitionBlock("", "SSDT", 2, "hack", "_HACK", 0)
         Return (Ones != Match(Local0, MEQ, Arg0, MTR, 0, 0))
     }
 
-//
-// ACPISensors configuration (ACPISensors.kext is not installed by default)
-//
-
-    // not implemented for the Y50
-
-//
-// USB related
-//
-
-#if 0
-    // In DSDT, native XSEL is renamed XXEL with Clover binpatch.
-    // Calls to it will land here.
-    // ... which does nothing
-    External(_SB.PCI0.XHC, DeviceObj)
-    Method(_SB.PCI0.XHC.XSEL)
-    {
-        // nothing
-    }
-#endif
-
     // Override for USBInjectAll.kext
     Device(UIAC)
     {
@@ -815,3 +794,4 @@ DefinitionBlock("", "SSDT", 2, "hack", "_HACK", 0)
     }
 }
 
+//EOF

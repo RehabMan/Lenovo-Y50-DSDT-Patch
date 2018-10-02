@@ -148,7 +148,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>kext-dev-mode=1 nv_disable=1 dart=0 -igfxnohdmi -cdfon</string>
+		<string>kext-dev-mode=1 nv_disable=1 dart=0 -cdfon</string>
 		<key>NeverHibernate</key>
 		<true/>
 		<key>Secure</key>
@@ -179,9 +179,9 @@
 				<key>device-id</key>
 				<data>EgQAAA==</data>
 				<key>hda-gfx</key>
-				<data>b25ib2FyZC0x</data>
+				<string>onboard-1</string>
 				<key>framebuffer-patch-enable</key>
-				<data>AQAAAA==</data>
+				<integer>1</integer>
 				<key>framebuffer-stolenmem</key>
 				<data>AAAACA==</data>
 				<key>framebuffer-fbmem</key>
@@ -189,13 +189,13 @@
 				<key>framebuffer-cursormem</key>
 				<data>AAAAAw==</data>
 				<key>framebuffer-con1-enable</key>
-				<data>AQAAAA==</data>
+				<integer>1</integer>
 				<key>framebuffer-con1-pipe</key>
 				<data>EgAAAA==</data>
 				<key>framebuffer-con1-type</key>
 				<data>AAgAAA==</data>
 				<key>framebuffer-con2-enable</key>
-				<data>AQAAAA==</data>
+				<integer>1</integer>
 				<key>framebuffer-con2-alldata</key>
 				<data>/wAAAAEAAABAAAAA</data>
 			</dict>
@@ -204,7 +204,7 @@
 				<key>#Comment</key>
 				<string>Intel HDA</string>
 				<key>layout-id</key>
-				<data>AgAAAA==</data>
+				<integer>3</integer>
 				<key>PinConfigurations</key>
 				<data></data>
 			</dict>
@@ -213,9 +213,9 @@
 				<key>#Comment</key>
 				<string>Intel HDMI HDA</string>
 				<key>layout-id</key>
-				<data>AgAAAA==</data>
+				<integer>3</integer>
 				<key>hda-gfx</key>
-				<data>b25ib2FyZC0x</data>
+				<string>onboard-1</string>
 			</dict>
 			<key>PciRoot(0)/Pci(0x1d,0)</key>
 			<dict>
@@ -366,52 +366,6 @@
 				<string>com.apple.iokit.IOAHCIBlockStorage</string>
 				<key>Replace</key>
 				<data>AAAAAAAAAAAAAAA=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>AppleHDA ALC283 (1 of 4) 0x11d41984 to 0x10ec0283</string>
-				<key>Find</key>
-				<data>PYQZ1BE=</data>
-				<key>Name</key>
-				<string>com.apple.driver.AppleHDA</string>
-				<key>Replace</key>
-				<data>PYMC7BA=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>AppleHDA ALC283 (2 of 4) 0x10ec0884 to zero</string>
-				<key>Find</key>
-				<data>PYQI7BA=</data>
-				<key>MatchOS</key>
-				<string>10.9.x,10.10.x</string>
-				<key>Name</key>
-				<string>com.apple.driver.AppleHDA</string>
-				<key>Replace</key>
-				<data>PQAAAAA=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>AppleHDA ALC283 (3 of 4) 0x10ec0885 to zero</string>
-				<key>Find</key>
-				<data>PYUI7BA=</data>
-				<key>MatchOS</key>
-				<string>10.9.x,10.10.x,10.11.x,10.12.x,10.13.x</string>
-				<key>Name</key>
-				<string>com.apple.driver.AppleHDA</string>
-				<key>Replace</key>
-				<data>PQAAAAA=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>AppleHDA ALC283 (#4 of 4) 0x11d41983 to zero</string>
-				<key>Find</key>
-				<data>PYMZ1BE=</data>
-				<key>MatchOS</key>
-				<string>10.11.x</string>
-				<key>Name</key>
-				<string>com.apple.driver.AppleHDA</string>
-				<key>Replace</key>
-				<data>PQAAAAA=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
