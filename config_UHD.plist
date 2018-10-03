@@ -237,7 +237,7 @@
 			<key>PciRoot(0)/Pci(0x1a,0)</key>
 			<dict>
 				<key>#Comment</key>
-				<string>Intel EHCI #1</string>
+				<string>Intel EHCI #2</string>
 				<key>subsystem-id</key>
 				<data>cHIAAA==</data>
 				<key>subsystem-vendor-id</key>
@@ -254,7 +254,7 @@
 			<key>PciRoot(0)/Pci(0x14,0)</key>
 			<dict>
 				<key>#Comment</key>
-				<string>Intel EHCI #1</string>
+				<string>Intel xHCI</string>
 				<key>subsystem-id</key>
 				<data>cHIAAA==</data>
 				<key>subsystem-vendor-id</key>
