@@ -24,3 +24,10 @@ $(BUILDDIR)/SSDT-HACK.aml: SSDT-HACK.dsl
 clean:
 	rm -f $(BUILDDIR)/*.dsl $(BUILDDIR)/*.aml
 
+
+.PHONY: install
+install: $(AML_PRODUCTS)
+	$(eval EFIDIR:=$(shell ./mount_efi.sh))
+	rm -f $(EFIDIR)/EFI/CLOVER/ACPI/patched/DSDT.aml
+	rm -f $(EFIDIR)/EFI/CLOVER/ACPI/patched/SSDT-*.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched/SSDT.aml
+	cp $(AML_PRODUCTS) $(EFIDIR)/EFI/CLOVER/ACPI/patched
