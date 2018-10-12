@@ -342,7 +342,7 @@
 			<key>Intel</key>
 			<false/>
 		</dict>
-		<key>ig-platform-id</key>
+		<key>#ig-platform-id</key>
 		<string>0x0a260006</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
@@ -366,18 +366,6 @@
 				<string>com.apple.iokit.IOAHCIBlockStorage</string>
 				<key>Replace</key>
 				<data>AAAAAAAAAAAAAAA=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>change F%uT%04x to F%uTxxxx in AppleBacklightInjector.kext (credit RehabMan)</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Name</key>
-				<string>com.apple.driver.AppleBacklight</string>
-				<key>Find</key>
-				<data>RiV1VCUwNHgA</data>
-				<key>Replace</key>
-				<data>RiV1VHh4eHgA</data>
 			</dict>
 		</array>
 		<key>KernelToPatch</key>

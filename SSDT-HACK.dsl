@@ -180,7 +180,7 @@ DefinitionBlock("", "SSDT", 2, "hack", "_HACK", 0)
 // Display backlight implementation
 //
 // From SSDT-PNLF.dsl
-// Adding PNLF device for IntelBacklight.kext or AppleBacklight.kext+AppleBacklightInjector.kext
+// Adding PNLF device for IntelBacklight.kext or AppleBacklight.kext+AppleBacklightFixup.kext
 
 #define SANDYIVY_PWMMAX 0x710
 #define HASWELL_PWMMAX 0xad9
@@ -328,7 +328,7 @@ DefinitionBlock("", "SSDT", 2, "hack", "_HACK", 0)
             }
 
             // Now Local2 is the new PWMMax, set _UID accordingly
-            // The _UID selects the correct entry in AppleBacklightInjector.kext
+            // The _UID selects the correct entry in AppleBacklightFixup.kext
             If (Local2 == SANDYIVY_PWMMAX) { _UID = 14 }
             ElseIf (Local2 == HASWELL_PWMMAX) { _UID = 15 }
             ElseIf (Local2 == SKYLAKE_PWMMAX) { _UID = 16 }
