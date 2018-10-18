@@ -212,6 +212,8 @@
 			<dict>
 				<key>#Comment</key>
 				<string>Intel HDMI HDA</string>
+				<key>alc-controller-patch-disable</key>
+				<integer>1</integer>
 				<key>layout-id</key>
 				<integer>3</integer>
 				<key>hda-gfx</key>
