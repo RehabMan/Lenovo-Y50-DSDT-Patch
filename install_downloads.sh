@@ -25,6 +25,9 @@ install_download_kexts
 install_brcmpatchram_kexts
 install_backlight_kexts
 
+# using FakePCIID_Intel_HDMI_Audio for HDAU 0x0c0c
+install_fakepciid_intel_hdmi_audio
+
 # install special build of AppleALC.kext until fixed build is available
 install_kext kexts/AppleALC.kext
 

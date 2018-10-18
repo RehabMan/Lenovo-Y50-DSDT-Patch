@@ -20,6 +20,7 @@ download_rehabman os-x-voodoo-ps2-controller RehabMan-Voodoo
 download_rehabman os-x-realtek-network RehabMan-Realtek-Network
 download_rehabman os-x-intel-backlight RehabMan-IntelBacklight
 download_rehabman os-x-acpi-battery-driver RehabMan-Battery
+download_rehabman os-x-fake-pci-id RehabMan-FakePCIID
 download_rehabman os-x-eapd-codec-commander RehabMan-CodecCommander
 download_rehabman os-x-brcmpatchram RehabMan-BrcmPatchRAM
 download_rehabman os-x-usb-inject-all RehabMan-USBInjectAll
