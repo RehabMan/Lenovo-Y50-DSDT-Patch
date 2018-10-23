@@ -2,7 +2,7 @@
 #set -x
 
 EXCEPTIONS=
-ESSENTIAL="AppleALC.kext"
+ESSENTIAL="AppleALC.kext CodecCommander.kext"
 
 source "$(dirname ${BASH_SOURCE[0]})"/_tools/_install_subs.sh
 warn_about_superuser
