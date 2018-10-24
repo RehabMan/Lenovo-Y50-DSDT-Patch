@@ -265,10 +265,8 @@
 				<integer>1600</integer>
 				<key>AAPL,max-port-current-in-sleep</key>
 				<integer>2100</integer>
-				<key>#Comment-0</key>
-				<string>No XHC to EHC port routing for USB2</string>
-				<key>RM,pr2-force</key>
-				<data>/z8AAA==</data>
+				<key>RM,disable_FakePCIID</key>
+				<integer>1</integer>
 			</dict>
 			<key>PciRoot(0)/Pci(0x1f,0)</key>
 			<dict>
